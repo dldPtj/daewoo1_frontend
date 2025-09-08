@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 // 뷰 컴포넌트 import
 import HomePage from '../components/HomePage.vue';
 import HotelSearch from  '../components/HotelSearch.vue';
+import HeaderComponent from '../components/HeaderComponent.vue';
 // import HotelDetail from '../components/HotelDetail.vue';
 // import PaymentPage from '../components/PaymentPage.vue';
 // import Favorites from '../components/Favorites.vue';
@@ -22,6 +23,7 @@ const router = createRouter({
     routes: [
         { path: '/', name: 'homepage', component: HomePage },
         { path: '/hotelsearch', name: 'hotelsearch', component: HotelSearch },
+        { path: '/headercomponent', name: 'headercomponent', component: HeaderComponent },
         // { path: '/hoteldetail', name: 'hoteldetail', component: HotelDetail },
         // { path: '/paymentpage', name: 'paymentpage', component: PaymentPage },
         // { path: '/favorites', name: 'favorites', component: Favorites },
