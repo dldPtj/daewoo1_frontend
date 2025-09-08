@@ -1,9 +1,7 @@
 <template>
   <div>
     <nav>
-      <router-link to="/homepage">HomePage</router-link>
-      | <router-link to="/hotelsearch">HotelSearch</router-link>
-      | <router-link to="/hoteldetail">HotelDetail</router-link>
+
     </nav>
   </div>
   <div>
