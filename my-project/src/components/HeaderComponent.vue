@@ -48,7 +48,7 @@
   justify-content: space-between;
   align-items: center;
 
-  width: 1440px;
+  max-width: 1440px;
   margin: -50px auto;
 
   background-color: white;
