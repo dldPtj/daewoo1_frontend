@@ -1,6 +1,6 @@
 화면 이름
 
-1. Home.vue
+1. HomePage.vue
 2. HotelSearch.vue
 3. HotelDetail.vue
 4. PaymentPage.vue

@@ -19,7 +19,7 @@ import Resetpw from '@/components/Resetpw.vue';
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL), // Vue 3 + Vite에서는 process.env 대신 import.meta.env 사용
     routes: [
-        { path: '/', name: 'homepage', component: HomePage },
+        { path: '/homepage', name: 'homepage', component: HomePage },
         { path: '/hotelsearch', name: 'hotelsearch', component: HotelSearch },
         { path: '/hoteldetail', name: 'hoteldetail', component: HotelDetail },
         { path: '/paymentpage', name: 'paymentpage', component: PaymentPage },
