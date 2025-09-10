@@ -9,13 +9,13 @@
         <br>
         로그인해주세요
       </div>
-      <div class= "fieldsetInput">
-        <span class="FLegend">이메일</span>
-        <input type="email" placeholder="이메일을 입력하세요.">
-      </div>
+        <fieldset>
+          <legend class="LegendLogin">이메일</legend>
+          <input type="email" placeholder="이메일을 입력하세요.">
+        </fieldset>
     </div>
     <div class="LoginImages">
-      <img src="../assets/LoginImg1.jpg">
+      <img src="../assets/LoginImg1.jpg" class="LoginIMG">
     </div>
   </div>
 </template>
@@ -40,19 +40,11 @@
     text-align: left;
   }
 
-.fieldsetInput .FLegend {
-  position: absolute;
-  top: -10px;
-  left: 15px;
-  background: white;
-  padding: 0 5px;
-  font-size: 13px;
-  color: #666;
+.LoginIMG{
+  width: 618px;
+  height: 816px;
 }
-
-.fieldsetInput input {
-  border: none; /* 내부 input은 border 제거 */
-  outline: none;
-  width: 200px;
+.LegendLogin{
+  text-align: left;
 }
 </style>
