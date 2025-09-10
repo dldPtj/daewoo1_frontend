@@ -8,6 +8,8 @@
   <button @click="$router.push('/homepage')">homepage 이동</button>
   <button @click="$router.push('/headercomponent')">headercomponent 이동</button>
   <button @click="$router.push('/footercomponent')">footercomponent 이동</button>
+  <button @click="$router.push('/loginpage')">loginpage 이동</button>
+
 </template>
 
 <style>
