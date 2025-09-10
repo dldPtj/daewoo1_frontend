@@ -40,11 +40,7 @@
     text-align: left;
   }
 
-img{
-    display: flex;
-    width: 618px;
-    height: 816px;
-  }
+
 .fieldsetInput .FLegend {
   position: absolute;
   top: -10px;
