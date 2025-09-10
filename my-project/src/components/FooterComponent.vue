@@ -3,33 +3,203 @@
 </script>
 
 <template>
-  <div id='wrapper'>
-    <div>
-      content
-    </div>
+  <div>
+<!--    화면-->
+<!--    <hr>-->
+<!--    <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>-->
+<!--    <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>-->
+<!--    <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>-->
+<!--    <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>-->
+<!--    <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>-->
+
   </div>
-  <footer>
-  </footer>
+    <footer class="footerContainer">
+      <div class="guDocContainer">
+        <div class="guDocText">
+          <h1 class="guDocGOT">구독 서비스 <br>신청해보세요</h1>
+        </div>
+        <!-- 구독 컨테이너 왼쪽 아래  -->
+        <div class="TheTravel">
+          <div class="TopTheTravel">
+            <h2>The Travel</h2>
+            <h3>구독하고 쿠폰, 최신 이벤트를 받아보세요.</h3>
+          </div>
+          <div>
+            <input type="text" class="textBox" placeholder="Your email address" style="border: none">
+            <button type="button" id = "GsubBtn" style="border: none">Subscribe</button>
+          </div>
+        </div>
+        <img src="../assets/mailBox.png" id="mailBox">
+      </div>
+      <div class="footerMain">
+        <div class="MainText">
+          <div class="iconBox">
+              <img src="../assets/faceBook.png" class="icons">
+              <img src="../assets/akar-icons_twitter-fill.png" class="icons">
+              <img src="../assets/akar-icons_youtube-fill.png" class="icons">
+              <img src="../assets/ant-design_instagram-filled.png" class = "icons">
+          </div>
+          <div class="MainTextBox">
+            <div class= "boxStyle">
+              <h3>Our Destinations</h3><br>
+              Canada<br><br>
+              Alaksa<br><br>
+              France<br><br>
+              Iceland
+            </div>
+            <div class= "boxStyle">
+              <h3>Our Activities</h3><br>
+              Northern Lights<br><br>
+              Cruising & sailing<br><br>
+              Multi-activities<br><br>
+              Kayaing
+            </div>
+            <div class= "boxStyle">
+              <h3>Travel Blogs</h3><br>
+              Bali Travel Guide<br><br>
+              Sri Lanks Travel Guide<br><br>
+              Peru Travel Guide<br><br>
+              Bali Travel Guide
+            </div>
+            <div class= "boxStyle">
+              <h3>Our About Us</h3><br>
+              Our Story<br><br>
+              Work with us<br><br>
+            </div>
+            <div class= "boxStyle">
+              <h3>Our Contact Us</h3><br>
+              Our Story<br><br>
+              Work Work with us<br><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 </template>
 
-<style >
-#wrapper{
-  height: auto;
-  min-height: 100%;
-  padding-bottom: 422px;
+<style>
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  footer {
-    position: relative;
-    width: 1440px;
-    display: flex;
-    background: black;
-  }
-  .background {
-    position: fixed;
-    display: flex;
-    min-width: 1440px;
-    height: 422px;
-    padding: 32px 104px 64px 104px;
-    background: white;
-  }
+.footerContainer{
+  bottom: 61px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 573px;
+  border-radius: 30px;
+  gap: 128px;
+}
+.footerMain {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  margin: 151px auto auto;
+  width: 100%;
+  height: 422px;
+  padding: 32px 0 64px 0;
+  gap: 64px;
+  background: #8DD3BB;
+}
+.guDocContainer{
+  display: flex;
+  position: relative;
+  background: #CDEAE1;
+  max-width: 1232px;
+  border-radius: 20px;
+  justify-content: space-between;
+  padding: 0 24px;
+  margin: 0 auto;
+  z-index: 1;
+}
+.guDocText{
+  display: flex;
+  flex: 1;
+  align-self: flex-start;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+#mailBox{
+  position: relative;
+  right: 47px;
+  width: 400px;
+  height: 305px;
+  margin-left: -16px;
+}
+.MainText {
+  display: flex;
+  position: relative;
+  max-width: 1232px;
+  height: fit-content;
+  justify-content: space-between;
+  gap: 140px;
+  margin: auto auto 0px;
+
+}
+.guDocGOT {
+  text-align: left;
+  width: 364px;
+  height: 108px;
+}
+.TheTravel{
+  position: relative;
+  flex-direction: column;
+  text-align: left;
+  display: flex;
+  width: 593px;
+  height: 125px;
+  left: -366px;
+  top: 158px;
+}
+.TopTheTravel {
+  margin-bottom: 16px;
+}
+.textBox{
+  width: 473px;
+  height: 56px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin-right: 16px;
+  padding-left: 16px;
+}
+#GsubBtn{
+  position: absolute;
+  width: 104px;
+  height: 56px;
+  gap: 10px;
+  background: black;
+  color: white;
+  border-radius: 4px;
+}
+#GsubBtn:hover{
+  background: gray;
+  color: white;
+}
+.iconBox {
+  margin-bottom: 120px;
+}
+.icons{
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+.boxStyle{
+  text-align: left;
+  margin-right: 24px;
+  width: 176px;
+  font-size: 16px;
+}
+.MainTextBox{
+  display: flex;
+
+}
+
+
+
 </style>

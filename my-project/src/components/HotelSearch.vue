@@ -10,9 +10,21 @@ export default {
 
 <template>
   <HeaderComponent />
+  <div class="outer-container">
+    <div class="inner-container">
 
+    </div>
+  </div>
 </template>
 
 <style >
-
+.outer-container {
+  display: flex;
+  justify-content: center;
+}
+.inner-container {
+  background-color: black;
+  width: 1232px;
+  height: 305px;
+}
 </style>
