@@ -40,8 +40,8 @@
       </div>
     </div>
       <div class="LoginImages">
-      <img src="../assets/LoginImg1.jpg" class="LoginIMG">
-    </div>
+        <img src="../assets/LoginImg1.jpg" class="LoginIMG">
+      </div>
   </div>
 </template>
 
@@ -53,12 +53,18 @@
 }
   #LoginMain{
     display: flex;
+    justify-content: center;
+  }
+  .LoginImages{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
   }
 
   .LoginBox{
+    margin: auto;
     width: 512px;
     height: 593px;
-    margin: 0 104px;
     border: #FF8682 solid 1px;
   }
   .LoginText{
