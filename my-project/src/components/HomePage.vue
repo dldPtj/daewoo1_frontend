@@ -34,7 +34,7 @@ export default {
   top: -75px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1232px;
+  width: 1240px;
   height: 150px;
   z-index: 2;
 }
@@ -92,8 +92,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 200px auto 40px;
-  width: 1440px;
+  margin: 70px auto 40px;
+  width: 1350px;
   padding: 0 50px 0 50px;
 }
 
@@ -105,13 +105,6 @@ export default {
   display: flex;
   align-items: center;
   margin: auto 20px auto 20px;
-}
-.calendar-icon {
-  text-align: right;
-}
-.city-see-all {
-  width: 200px;
-  height: 40px;
 }
 .city-see-all-btn {
   border: #8ae6b2 solid 1px;
@@ -132,7 +125,7 @@ export default {
   justify-content: space-between;
   position: absolute;
   text-align: left;
-  top: 1380px;
+  top: 1250px;
   width: 250px;
   margin: auto 25px;
 }
@@ -166,12 +159,30 @@ export default {
   justify-content: center;
   top: 70px;
 }
+
+.tour-selection-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 120px auto 40px;
+  width: 1350px;
+  padding: 0 50px 0 50px;
+}
+.tour-selection-text {
+  text-align: left;
+  max-width: 1100px;
+}
+
+.tour-see-all-btn {
+  border: #8ae6b2 solid 1px;
+  border-radius: 8px;
+  background-color: white;
+  width: 70px;
+  height: 45px;
+}
 </style>
 
 <template>
-  <div>
-
-  </div>
   <HeaderComponent />
 
 <!--HeaderComponent 부분-->
@@ -358,7 +369,18 @@ export default {
 
 
 <!--투어 선택 부분-->
-  <div>
-
+  <div class="tour-selection-bar">
+    <div class="tour-selection-text">
+      <h2>
+        여행 더보기
+      </h2>
+      <br>
+      <h4>
+        Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.
+      </h4>
+    </div>
+    <div class="tour-see-all">
+      <button class="tour-see-all-btn">See All</button>
+    </div>
   </div>
 </template>
