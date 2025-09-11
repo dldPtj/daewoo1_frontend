@@ -442,6 +442,7 @@ export default {
         </button>
       </div>
     </div>
+<!--    test-->
     <div class="tour-imgs">
       <img src="@/assets/melaka-tour1.png">
       <img src="@/assets/melaka-tour2.png">
