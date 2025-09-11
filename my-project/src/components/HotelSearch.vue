@@ -12,7 +12,6 @@ export default {
   <HeaderComponent />
   <div class="outer-container">
     <div class="inner-container">
-
     </div>
   </div>
 </template>
@@ -23,7 +22,7 @@ export default {
   justify-content: center;
 }
 .inner-container {
-  background-color: black;
+  border: #FF8682 solid 1px;
   width: 1232px;
   height: 305px;
 }

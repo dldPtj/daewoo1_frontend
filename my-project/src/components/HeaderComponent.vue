@@ -15,7 +15,6 @@
                     hotels
                 </span>
       </div>
-
       <!-- 오른쪽 -->
       <div class="item">
         <div class="flex vertical-center">
