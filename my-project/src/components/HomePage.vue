@@ -204,7 +204,12 @@ export default {
   border: #8ae6b2 solid 1px;
   background-color: white;
   text-align: center;
+  margin-left: 420px;
   padding: 5px;
+}
+.flight-book-btn {
+  position: absolute;
+  top: 1940px;
 }
 #bookflight {
   display: flex;
@@ -216,6 +221,7 @@ export default {
   width: 490px;
   height: 50px;
 }
+
 </style>
 
 <template>
