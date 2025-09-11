@@ -134,6 +134,7 @@ export default {
   text-align: left;
   top: 1380px;
   width: 250px;
+  margin: auto 25px;
 }
 .city-content {
   display: flex;
@@ -141,6 +142,9 @@ export default {
   flex-direction: column;
   z-index: 2;
   color: white;
+}
+.city-detail {
+  max-width: 165px;
 }
 .hotel-price {
   display: flex;
@@ -250,79 +254,105 @@ export default {
   <!--도시 대표 이미지-->
   <div class="city-selection-imgs">
     <!-- 첫번째 도시-->
-    <img src="@/assets/melbourne.png">
-    <div class="city-item">
-      <div class="city-content">
-        <h3 class="city-title">
-          멘버른
-        </h3>
-        <span class="city-detail"> <!--한줄(두줄)에는 공백포함 18자(40자)만 허용하기-->
-          Amazing journyqqqqqqqqqqqqqqqqqqqqqqqqqqq
-        </span>
+    <div class="first-city">
+      <img src="@/assets/melbourne.png">
+
+      <div class="city-item">
+        <div class="city-content">
+          <h3 class="city-title">
+            멘버른
+          </h3>
+          <span class="city-detail"> <!--한줄(두줄)에는 공백포함 18자(40자)만 허용하기-->
+            Amazing journey
+          </span>
+        </div>
+        <div class="hotel-price">
+          <h3>
+            130,000원
+          </h3>
+        </div>
+        <div class="hotel-book-btn">
+          <button id="bookhotel">Book a Hotel</button>
+        </div>
       </div>
-      <div class="hotel-price">
-        <h3>
-          130,000원
-        </h3>
-      </div>
-      <div class="hotel-book-btn">
-        <button id="bookhotel">Book a Hotel</button>
-      </div>
+
     </div>
 
-<!--    &lt;!&ndash;두번째 도시&ndash;&gt;-->
-<!--    <div class="city-item">-->
-<!--      <img src="@/assets/paris.png">-->
-<!--      <div class="city-content">-->
-<!--        <h3 class="city-title">-->
-<!--          파리-->
-<!--        </h3>-->
-<!--        <span class="city-detail">-->
-<!--          A Paris Adventure-->
-<!--        </span>-->
-<!--      </div>-->
-<!--      <div class="hotel-price">-->
-<!--        <h3>-->
-<!--          140,000원-->
-<!--        </h3>-->
-<!--      </div>-->
-<!--    </div>-->
 
-<!--    &lt;!&ndash;세번째 도시&ndash;&gt;-->
-<!--    <div class="city-item">-->
-<!--      <img src="@/assets/london.png">-->
-<!--      <div class="city-content">-->
-<!--        <h3 class="city-title">-->
-<!--          런던-->
-<!--        </h3>-->
-<!--        <span class="city-detail">-->
-<!--          London eye adventure-->
-<!--        </span>-->
-<!--      </div>-->
-<!--      <div class="hotel-price">-->
-<!--        <h3>-->
-<!--          150,000원-->
-<!--        </h3>-->
-<!--      </div>-->
-<!--    </div>-->
+    <!--두번째 도시-->
+    <div class="second-city">
+      <img src="@/assets/paris.png">
 
-<!--    &lt;!&ndash;네번째 도시&ndash;&gt;-->
-<!--    <div class="city-item">-->
-<!--      <img src="@/assets/colombia.png">-->
-<!--      <div class="city-content">-->
-<!--        <h3 class="city-title">-->
-<!--          콜롬비아-->
-<!--        </h3>-->
-<!--        <span class="city-detail">-->
-<!--          Amazing streets-->
-<!--        </span>-->
-<!--      </div>-->
-<!--      <div class="hotel-price">-->
-<!--        <h3>-->
-<!--          130,000원-->
-<!--        </h3>-->
-<!--      </div>-->
-<!--    </div>-->
+      <div class="city-item">
+        <div class="city-content">
+          <h3 class="city-title">
+            파리
+          </h3>
+          <span class="city-detail">
+            A Paris Adventure
+          </span>
+        </div>
+        <div class="hotel-price">
+          <h3>
+            140,000원
+          </h3>
+        </div>
+        <div class="hotel-book-btn">
+          <button id="bookhotel">Book a Hotel</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!--세번째 도시-->
+    <div class="third-city">
+      <img src="@/assets/london.png">
+
+      <div class="city-item">
+        <div class="city-content">
+          <h3 class="city-title">
+            런던
+          </h3>
+          <span class="city-detail">
+            London eye adventure
+          </span>
+        </div>
+        <div class="hotel-price">
+          <h3>
+            150,000원
+          </h3>
+        </div>
+        <div class="hotel-book-btn">
+          <button id="bookhotel">Book a Hotel</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!--네번째 도시-->
+    <div class="fourth-city">
+      <img src="@/assets/colombia.png">
+
+      <div class="city-item">
+        <div class="city-content">
+          <h3 class="city-title">
+            콜롬비아
+          </h3>
+          <span class="city-detail">
+            Amazing streets
+          </span>
+        </div>
+        <div class="hotel-price">
+          <h3>
+            130,000원
+          </h3>
+        </div>
+        <div class="hotel-book-btn">
+          <button id="bookhotel">Book a Hotel</button>
+        </div>
+      </div>
+
+    </div>
 
   </div>
 
