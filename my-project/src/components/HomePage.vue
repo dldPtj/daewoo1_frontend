@@ -29,7 +29,7 @@ export default {
   background-color: white;
   flex-direction: column;
   border-radius: 20px;
-  box-shadow: 0px 3px 10px grey;
+  box-shadow: 0px 3px 10px #d3d3d3;
   position: relative;
   top: -75px;
   left: 50%;
