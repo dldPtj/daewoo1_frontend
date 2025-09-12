@@ -1,4 +1,23 @@
 <script>
+import eyeoff from  '../assets/eye-off.png'
+import eyeon from  '../assets/eye-on.png'
+
+  export default {
+    data() {
+      return {
+        eyeImg : eyeoff
+      };
+    },
+    methods: {
+      changeEyeImg(){
+        if(this.eyeImg === eyeoff){
+          this.eyeImg = eyeon;
+        } else {
+          this.eyeImg = eyeoff;
+        }
+      }
+    }
+  };
 </script>
 
 <template>
@@ -7,7 +26,7 @@
       <div class="LoginText">
         <h1>Login</h1>
         <br>
-        로그인해주세요
+       <a class="PlsL"> 로그인해주세요</a>
       </div>
       <fieldset class="fieldLogin">
           <legend class="LegendLogin">이메일</legend>
@@ -17,26 +36,26 @@
         <legend class="LegendLogin">Password</legend>
         <input type="password" placeholder="비밀번호를 입력하세요." class="LTextBox">
         <div id = "eye-offBox">
-          <img src="../assets/eye-off.png" id ="eye-off" alt="눈 감는 사진">
+          <img :src="eyeImg" @click = "changeEyeImg" id ="eye-off" alt="눈 감는 사진">
         </div>
       </fieldset>
       <div id = "PwdLine">
-        <span>
-        <input type="checkbox"> 비밀번호 기억하기
+        <span id="LoginCheckboxLine">
+        <input type="checkbox" class ="LoginCheckbox">  비밀번호 기억하기
         </span>
-        <router-link to="/">Forgot Password</router-link>
+        <router-link to="/" class = "FPwd">Forgot Password</router-link>
       </div>
         <button type="button" id="LoginBtn">Login</button>
       <div id = "SignUpLink">
-        <router-link to="/">회원가입</router-link>
+        <router-link to="/" class="SignUpBtn">회원가입</router-link>
       </div>
-      <div>
+      <div class="hr-sect">
         Or link with
       </div>
       <div id ="LoginIconBoxes">
-        <button type="button" id ="fBtn"><img src="../assets/facebookLogin.png"></button>
-        <button type="button" id = "GBtn"><img src="../assets/googleLogin.png"></button>
-        <button type="button" id = "ABtn"><img src="../assets/appleLogin.png"></button>
+        <button type="button" id ="fBtn" class="LBtnGroup"><img src="../assets/facebookLogin.png"></button>
+        <button type="button" id = "GBtn" class="LBtnGroup"><img src="../assets/googleLogin.png"></button>
+        <button type="button" id = "ABtn" class="LBtnGroup"><img src="../assets/appleLogin.png"></button>
       </div>
     </div>
       <div class="LoginImages">
@@ -58,18 +77,21 @@
   .LoginImages{
     display: flex;
     justify-content: space-between;
-    margin: auto;
+    margin: auto auto auto 0;
   }
 
   .LoginBox{
-    margin: auto;
+    margin: auto 104px  auto auto;
     width: 512px;
     height: 593px;
-    border: #FF8682 solid 1px;
+
   }
   .LoginText{
     text-align: left;
     margin-bottom: 48px;
+  }
+  .PlsL{
+    color: #112211;
   }
 
 .LoginIMG{
@@ -80,9 +102,11 @@
   text-align: left;
 }
 .fieldLogin{
+  display: flex;
   margin-bottom: 24px;
   width: 512px;
   height: 56px;
+  border-radius: 4px;
 }
 #PwdLine{
   margin-bottom: 40px;
@@ -95,6 +119,7 @@
 }
 #LoginIconBoxes{
   margin-top: 40px;
+  display: flex;
 }
 #fBtn{
   margin-right: 16px;
@@ -103,11 +128,18 @@
   margin-right: 16px;
 }
 .LTextBox{
- margin: auto auto  ;
+  display: flex;
+  flex: 1;
+  height: 30px;
+  border: none;
+  margin-left: 16px;
+}
+input.LTextBox:focus{
+  outline: none;
 }
 #eye-off{
-  width: 22.5px;
-  height: 15px;
+  width: 24px;
+  height: 24px;
 }
 #eye-offBox{
   width: 48px;
@@ -116,4 +148,69 @@
   display: flex;
   justify-content: center;
 }
+#LoginCheckboxLine{
+  margin-right: 240px;
+}
+.LoginCheckbox{
+  width: 18px;
+  height: 18px;
+  border: black solid 2px;
+  position: relative;
+  top: 3px;
+}
+.FPwd{
+  color: #FF8682;
+  text-decoration: none;
+}
+.FPwd:hover{
+  color: #e0605d;
+}
+#LoginBtn{
+  width: 100%;
+  height: 48px;
+  background-color: #8DD3BB;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+}
+
+#LoginBtn:hover{
+  background-color: #93efc6;
+  color: gray;
+}
+.SignUpBtn{
+  text-decoration: none;
+  color: black;
+}
+.SignUpBtn:hover{
+  color: gray;
+}
+.LBtnGroup{
+  border: #8DD3BB solid 1px;
+  width: 160px;
+  height: 56px;
+  background-color: white;
+}
+.LBtnGroup:hover{
+  background-color: #D9D9D9;
+}
+.hr-sect {
+   display: flex;
+   flex-basis: 100%;
+   align-items: center;
+   color: rgba(0, 0, 0, 0.25);
+   font-size: 15px;
+   margin: 8px 0px;
+}
+.hr-sect::before,
+.hr-sect::after {
+  content: "";
+  flex-grow: 1;
+  background: rgba(0, 0, 0, 0.25);
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  margin: 0px 16px;
+}
+
 </style>
