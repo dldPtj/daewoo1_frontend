@@ -1,11 +1,15 @@
 <script>
 import eyeoff from  '../assets/eye-off.png'
 import eyeon from  '../assets/eye-on.png'
-
+import LoginImg1 from  '../assets/LoginImg1.jpg'
+import LoginImg2 from '../assets/LoginImg2.jpg'
   export default {
     data() {
       return {
-        eyeImg : eyeoff
+        eyeImg : eyeoff,
+        LoginImg: LoginImg1,
+        LoginImgBtn1: LoginImg1,
+        LoginImgBtn2: LoginImg2,
       };
     },
     methods: {
@@ -14,6 +18,13 @@ import eyeon from  '../assets/eye-on.png'
           this.eyeImg = eyeon;
         } else {
           this.eyeImg = eyeoff;
+        }
+      },
+      changeLoginImg(img){
+        if(img === this.LoginImgBtn1){
+          this.LoginImg = LoginImg1;
+        }else {
+          this.LoginImg = LoginImg2;
         }
       }
     }
@@ -59,8 +70,20 @@ import eyeon from  '../assets/eye-on.png'
       </div>
     </div>
       <div class="LoginImages">
-        <img src="../assets/LoginImg1.jpg" class="LoginIMG">
+        <img :src="LoginImg"  class="LoginIMG">
+       <div id = "PicBtnBoxes">
+         <span style="margin-right: 8px">
+          <button type="button" @click ="changeLoginImg(LoginImgBtn1)" class="SelectPicBtn"></button>
+         </span>
+         <span style="margin-right: 8px">
+          <button type="button" @click="changeLoginImg(LoginImgBtn2)" class="NSelectPicBtn"></button>
+         </span>
+         <span style="margin-right: 8px">
+          <button type="button" class="NSelectPicBtn"></button>
+         </span>
+       </div>
       </div>
+
   </div>
 </template>
 
@@ -78,6 +101,7 @@ import eyeon from  '../assets/eye-on.png'
     display: flex;
     justify-content: space-between;
     margin: auto auto auto 0;
+    width: 616px;
   }
 
   .LoginBox{
@@ -149,7 +173,7 @@ input.LTextBox:focus{
   justify-content: center;
 }
 #LoginCheckboxLine{
-  margin-right: 240px;
+  margin-right: 230px;
 }
 .LoginCheckbox{
   width: 18px;
@@ -211,6 +235,32 @@ input.LTextBox:focus{
   font-size: 0px;
   line-height: 0px;
   margin: 0px 16px;
+}
+.SelectPicBtn{
+  display: flex;
+  position: relative;
+  width: 32px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #8DD3BB;
+  border: none;
+}
+.NSelectPicBtn{
+  display: flex;
+  position: relative;
+  border: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
+#PicBtnBoxes{
+  display: flex;
+  position: relative;
+  width: 616px;
+  height: 58px;
+  right: 332px;
+  margin: 758px 0 0 0;
+  justify-content: center;
 }
 
 </style>
