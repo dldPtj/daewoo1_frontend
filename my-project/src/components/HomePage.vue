@@ -29,7 +29,7 @@ export default {
   background-color: white;
   flex-direction: column;
   border-radius: 20px;
-  box-shadow: 0px 3px 10px grey;
+  box-shadow: 0px 3px 10px #d3d3d3;
   position: relative;
   top: -75px;
   left: 50%;
@@ -141,7 +141,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.hotel-price {
+.homepage-hotel-price {
   display: flex;
   z-index: 2;
   color: white;
@@ -204,7 +204,12 @@ export default {
   border: #8ae6b2 solid 1px;
   background-color: white;
   text-align: center;
+  margin-left: 420px;
   padding: 5px;
+}
+.flight-book-btn {
+  position: absolute;
+  top: 1940px;
 }
 #bookflight {
   display: flex;
@@ -216,6 +221,7 @@ export default {
   width: 490px;
   height: 50px;
 }
+
 </style>
 
 <template>
@@ -313,7 +319,7 @@ export default {
             Amazing journey
           </span>
         </div>
-        <div class="hotel-price">
+        <div class="homepage-hotel-price">
           <h3>
             130,000원
           </h3>
@@ -339,7 +345,7 @@ export default {
             A Paris Adventure
           </span>
         </div>
-        <div class="hotel-price">
+        <div class="homepage-hotel-price">
           <h3>
             140,000원
           </h3>
@@ -364,7 +370,7 @@ export default {
             London eye adventurewwwwwwwwwwwwwwwwwwwwwwwwwwwww
           </span>
         </div>
-        <div class="hotel-price">
+        <div class="homepage-hotel-price">
           <h3>
             150,000원
           </h3>
@@ -389,7 +395,7 @@ export default {
             Amazing streets
           </span>
         </div>
-        <div class="hotel-price">
+        <div class="homepage-hotel-price">
           <h3>
             130,000원
           </h3>
@@ -442,7 +448,6 @@ export default {
         </button>
       </div>
     </div>
-<!--    testq11-->
     <div class="tour-imgs">
       <img src="@/assets/melaka-tour1.png">
       <img src="@/assets/melaka-tour2.png">
