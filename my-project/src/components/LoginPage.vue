@@ -111,7 +111,6 @@ import LoginImg2 from '../assets/LoginImg2.jpg'
          </span>
        </div>
       </div>
-
   </div>
 </template>
 
@@ -136,7 +135,6 @@ import LoginImg2 from '../assets/LoginImg2.jpg'
     margin: auto 104px  auto auto;
     width: 512px;
     height: 593px;
-
   }
   .LoginText{
     text-align: left;
