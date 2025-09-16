@@ -78,10 +78,20 @@ export default {
       </div>
       <!--가격 필터-->
       <div class="price-filter">
-
+        <h4>Price</h4>
+        <input type="range" id="mySlider" name="mySlider" min="0" max="100" value="50">
       </div>
+      <!--호텔 평점 필터-->
       <div class="rating-filer">
-
+        <h4>Rating</h4>
+      </div>
+      <!--호텔 무료 서비스 필터-->
+      <div class="freebies-filter">
+        <h4>Freebies</h4>
+      </div>
+      <!--호텔 편의시설 필터-->
+      <div class="amenities-filter">
+        <h4>Amenities</h4>
       </div>
     </div>
 
@@ -139,9 +149,9 @@ export default {
               <!--호텔 위치-->
               <div class="hotel-location">
                 <img src="@/assets/ion-location.png">
-                <small><span id="address">
-                  Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437
-                </span></small>
+                <span id="address">
+                  <small>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 344371111111111111111111111111111111111111111111111</small>
+                </span>
               </div>
 
               <!--호텔 등급과 편의시설-->
@@ -222,7 +232,7 @@ export default {
             <!--호텔 위치-->
             <div class="hotel-location">
               <img src="@/assets/ion-location.png">
-              <span id="hotel-location">
+              <span id="address">
                 <small>Kucukayasofya No. 40 Sultanahmet, Istanbul 34022</small>
               </span>
             </div>
@@ -306,7 +316,7 @@ export default {
             <!--호텔 위치-->
             <div class="hotel-location">
               <img src="@/assets/ion-location.png">
-              <span id="hotel-location">
+              <span id="address">
                 <small>Kucukayasofya No. 40 Sultanahmet, Istanbul 34022</small>
               </span>
             </div>
@@ -388,7 +398,7 @@ export default {
             <!--호텔 위치-->
             <div class="hotel-location">
               <img src="@/assets/ion-location.png">
-              <span id="hotel-location">
+              <span id="address">
                 <small>Kucukayasofya No. 40 Sultanahmet, Istanbul 34022</small>
               </span>
             </div>
@@ -458,6 +468,29 @@ export default {
 </template>
 
 <style >
+.price-filter {
+  margin: 40px 10px 20px 0;
+}
+.rating-filer {
+  border-top : #D9D9D9 solid 1px;
+  margin: 20px 10px 20px 0;
+}
+.freebies-filter {
+  border-top : #D9D9D9 solid 1px;
+  margin: 20px 10px 20px 0;
+}
+.amenities-filter {
+  border-top : #D9D9D9 solid 1px;
+  margin: 20px 10px 20px 0;
+}
+.hotel-filters {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 410px;
+  border-right: #D9D9D9 solid 1px;
+}
+
 .hotel-img-count {
   display: flex;
   justify-content: center;
@@ -561,6 +594,11 @@ export default {
   border-radius: 15px;
   box-shadow: 0px 3px 10px #d3d3d3;
 }
+#address {
+  max-width: 310px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .hotel-location {
   display: flex;
   align-items: center;
@@ -635,9 +673,7 @@ export default {
   margin: auto;
   max-width: 1240px;
 }
-.hotel-filters {
-  text-align: left;
-}
+
 .hotel-search-bar {
   display: flex;
   margin: 100px auto 40px;
