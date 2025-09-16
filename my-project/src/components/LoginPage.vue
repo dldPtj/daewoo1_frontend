@@ -1,6 +1,6 @@
 <script>
-import eyeoff from  '../assets/eye-off.png'
-import eyeon from  '../assets/eye-on.png'
+import eyeoff from  '../assets/Eye off.png'
+import eyeon from  '../assets/Eye.png'
 import LoginImg1 from  '../assets/LoginImg1.jpg'
 import LoginImg2 from '../assets/LoginImg2.jpg'
   export default {
@@ -10,7 +10,13 @@ import LoginImg2 from '../assets/LoginImg2.jpg'
         LoginImg: LoginImg1,
         LoginImgBtn1: LoginImg1,
         LoginImgBtn2: LoginImg2,
+        ChangeLBtn1: true,
+        ChangeLBtn2: false,
+        TimerId : null
       };
+    },
+    mounted() {
+      this.TimerId = setInterval(this.TtoCIMG, 10000);
     },
     methods: {
       changeEyeImg(){
@@ -26,8 +32,29 @@ import LoginImg2 from '../assets/LoginImg2.jpg'
         }else {
           this.LoginImg = LoginImg2;
         }
-      }
+      },
+      changLBtn(btn){
+        if(btn === this.ChangeLBtn2){
+            this.ChangeLBtn2 = true;
+            this.ChangeLBtn1 = false;
+        }else if(btn === this.ChangeLBtn1){
+          this.ChangeLBtn1 = true;
+          this.ChangeLBtn2 = false;
+        }
+      },
+      TtoCIMG(){
+        if(this.LoginImg === LoginImg1){
+          this.LoginImg = LoginImg2;
+          this.ChangeLBtn2 = true;
+          this.ChangeLBtn1 = false;
+        }else if(this.LoginImg === LoginImg2){
+          this.LoginImg = LoginImg1;
+          this.ChangeLBtn1 = true;
+          this.ChangeLBtn2 = false;
+        }
+      },
     }
+
   };
 </script>
 
@@ -70,13 +97,14 @@ import LoginImg2 from '../assets/LoginImg2.jpg'
       </div>
     </div>
       <div class="LoginImages">
-        <img :src="LoginImg"  class="LoginIMG">
+        <img :src="LoginImg" style="width: 612px; height: 816px" class="LoginIMG">
        <div id = "PicBtnBoxes">
          <span style="margin-right: 8px">
-          <button type="button" @click ="changeLoginImg(LoginImgBtn1)" class="SelectPicBtn"></button>
+          <button type="button" @click ="changeLoginImg(LoginImgBtn1), changLBtn(ChangeLBtn1)" class="NSelectPicBtn" :class="{'SelectPicBtn': ChangeLBtn1}"  ></button>
          </span>
+<!--         class="SelectPicBtn" class="NSelectPicBtn"-->
          <span style="margin-right: 8px">
-          <button type="button" @click="changeLoginImg(LoginImgBtn2)" class="NSelectPicBtn"></button>
+          <button type="button" @click="changeLoginImg(LoginImgBtn2), changLBtn(ChangeLBtn2)" class="NSelectPicBtn" :class="{'SelectPicBtn': ChangeLBtn2}" ></button>
          </span>
          <span style="margin-right: 8px">
           <button type="button" class="NSelectPicBtn"></button>
@@ -236,6 +264,14 @@ input.LTextBox:focus{
   line-height: 0px;
   margin: 0px 16px;
 }
+.NSelectPicBtn{
+  display: flex;
+  position: relative;
+  border: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
 .SelectPicBtn{
   display: flex;
   position: relative;
@@ -245,14 +281,7 @@ input.LTextBox:focus{
   background-color: #8DD3BB;
   border: none;
 }
-.NSelectPicBtn{
-  display: flex;
-  position: relative;
-  border: none;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-}
+
 #PicBtnBoxes{
   display: flex;
   position: relative;
