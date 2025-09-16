@@ -141,7 +141,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.hotel-price {
+.homepage-hotel-price {
   display: flex;
   z-index: 2;
   color: white;
@@ -319,7 +319,7 @@ export default {
             Amazing journey
           </span>
         </div>
-        <div class="hotel-price">
+        <div class="homepage-hotel-price">
           <h3>
             130,000원
           </h3>
@@ -345,7 +345,7 @@ export default {
             A Paris Adventure
           </span>
         </div>
-        <div class="hotel-price">
+        <div class="homepage-hotel-price">
           <h3>
             140,000원
           </h3>
@@ -370,7 +370,7 @@ export default {
             London eye adventurewwwwwwwwwwwwwwwwwwwwwwwwwwwww
           </span>
         </div>
-        <div class="hotel-price">
+        <div class="homepage-hotel-price">
           <h3>
             150,000원
           </h3>
@@ -395,7 +395,7 @@ export default {
             Amazing streets
           </span>
         </div>
-        <div class="hotel-price">
+        <div class="homepage-hotel-price">
           <h3>
             130,000원
           </h3>
