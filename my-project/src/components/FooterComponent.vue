@@ -14,7 +14,9 @@
 
   </div>
     <footer class="footerContainer">
+  <!--  가운데 위 컨테이너-->
       <div class="guDocContainer">
+<!--        구독 컨테이너 왼쪽 위-->
         <div class="guDocText">
           <h1 class="guDocGOT">구독 서비스 <br>신청해보세요</h1>
         </div>
@@ -29,16 +31,19 @@
             <button type="button" id = "GsubBtn" style="border: none">Subscribe</button>
           </div>
         </div>
+<!--        오른쪽 위 메일박스 사진-->
         <img src="../assets/mailBox.png" id="mailBox">
       </div>
+<!--      전체 컨테이너 아래-->
       <div class="footerMain">
         <div class="MainText">
-          <div class="iconBox">
+<!--          왼쪽 위 아이콘 박스 -->
+            <div id = "iconBox">
               <img src="../assets/faceBook.png" class="icons">
               <img src="../assets/akar-icons_twitter-fill.png" class="icons">
               <img src="../assets/akar-icons_youtube-fill.png" class="icons">
               <img src="../assets/ant-design_instagram-filled.png" class = "icons">
-          </div>
+            </div>
           <div class="MainTextBox">
             <div class= "boxStyle">
               <h3>Our Destinations</h3><br>
@@ -84,25 +89,24 @@
   box-sizing: border-box;
 }
 .footerContainer{
-  bottom: 61px;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 573px;
   border-radius: 30px;
-  gap: 128px;
+
 }
 .footerMain {
   display: flex;
-  position: fixed;
+  position: absolute;
   flex-direction: column;
-  margin: 151px auto auto;
   width: 100%;
   height: 422px;
   padding: 32px 0 64px 0;
   gap: 64px;
   background: #8DD3BB;
+  bottom: 0;
 }
 .guDocContainer{
   display: flex;
@@ -135,10 +139,9 @@
 .MainText {
   display: flex;
   position: relative;
-  max-width: 1232px;
+  width: 1232px;
   height: fit-content;
   justify-content: space-between;
-  gap: 140px;
   margin: auto auto 0px;
 
 }
@@ -181,9 +184,7 @@
   background: gray;
   color: white;
 }
-.iconBox {
-  margin-bottom: 120px;
-}
+
 .icons{
   width: 20px;
   height: 20px;

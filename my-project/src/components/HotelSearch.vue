@@ -1,9 +1,12 @@
 <script >
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import FooterComponent from  "@/components/FooterComponent.vue"
+
 
 export default {
   components: {
     HeaderComponent: HeaderComponent,
+    FooterComponent: FooterComponent,
   }
 }
 </script>
@@ -462,9 +465,9 @@ export default {
         </div>
 
       </div>
-
     </div>
   </div>
+  <FooterComponent />
 </template>
 
 <style >
@@ -699,6 +702,7 @@ export default {
   align-items: center;
   margin: 6px auto;
 }
+
 #hotel-search-btn {
   border: #8ae6b2 solid 1px;
   border-radius: 5px;
@@ -706,4 +710,5 @@ export default {
   width: 55px;
   height: 55px;
 }
+
 </style>
