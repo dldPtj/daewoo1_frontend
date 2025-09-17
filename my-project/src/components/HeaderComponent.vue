@@ -7,7 +7,6 @@
 <template>
   <div class="container">
     <nav class="nav-container">
-
       <!-- 왼쪽 -->
       <div class="item">
                 <span>
@@ -42,17 +41,27 @@
 </template>
 
 <style >
+.container{
+  border: #42b983 solid 1px;
+}
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  max-width: 1440px;
-  margin: -50px auto;
+  width: 100%;
+  margin: -61px auto;
 
   background-color: white;
-  padding: 0 105px;
+  padding: 0 125px;
   height: 87px;
+
+  box-shadow: 0px 2px 5px #d3d3d3;
+  position: fixed;
+  z-index: 5;
+
+
+
 
 }
 
