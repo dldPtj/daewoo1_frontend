@@ -53,7 +53,7 @@
   margin: -61px auto;
 
   background-color: white;
-  padding: 0 125px;
+  padding: 0 216px;
   height: 87px;
 
   box-shadow: 0px 2px 5px #d3d3d3;

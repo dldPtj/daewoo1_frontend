@@ -36,7 +36,8 @@ export default {
 
   <div id = "AccountPage">
     <h1>Account</h1>
-    <div id = "AccountList">
+   <div id = "ACListStyle">
+    <div class = "AccountList">
       <div class="AccountListBox">
         <div class="ACDataBox">
           <a>Name</a>
@@ -47,15 +48,76 @@ export default {
         <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
+    <div class = "AccountList">
+      <div class="AccountListBox">
+        <div class="ACDataBox">
+          <a>Email</a>
+          <div class="ACInsertData">
+            이메이메
+          </div>
+        </div>
+        <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
+      </div>
+    </div>
+    <div class = "AccountList">
+      <div class="AccountListBox">
+        <div class="ACDataBox">
+          <a>Password</a>
+          <div class="ACInsertData" id="ACPWData">
+            <input type="password" value="sdsd" readonly>
+          </div>
+        </div>
+        <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
+      </div>
+    </div>
+    <div class = "AccountList">
+      <div class="AccountListBox">
+        <div class="ACDataBox">
+          <a>Phone number</a>
+          <div class="ACInsertData">
+            010-1234-1234
+          </div>
+        </div>
+        <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
+      </div>
+    </div>
+    <div class = "AccountList">
+      <div class="AccountListBox">
+        <div class="ACDataBox">
+          <a>Address</a>
+          <div class="ACInsertData">
+            경기도 부천시 어디구 어디동
+          </div>
+        </div>
+        <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
+      </div>
+    </div>
+    <div class = "AccountList">
+      <div class="AccountListBox">
+        <div class="ACDataBox">
+          <a>Date of birth</a>
+          <div class="ACInsertData">
+            2002-09-12
+          </div>
+        </div>
+        <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
+      </div>
+    </div>
+   </div>
   </div>
   <FooterComponent/>
 </template>
 
 <style >
+
 * {
   margin:0;
   padding: 0;
   box-sizing: border-box;
+}
+#ACListStyle{
+  box-shadow: 0px 2px 5px #d3d3d3;
+  padding-bottom: 1px;
 }
 .ACDataBox{
   display: flex;
@@ -67,6 +129,12 @@ export default {
   font-weight: bold;
   font-size: 20px;
 }
+.ACInsertData input {
+  border: none;
+}
+.ACInsertData input:focus{
+  outline: none;
+}
 .ACDataBox a{
   font-size: 16px;
   color: gray;
@@ -77,7 +145,6 @@ export default {
   justify-content: space-between;
   width: 1184px;
   height: 52px;
-  border: blue solid 1px;
 }
 .AccountListBox button{
   width: 140px;
@@ -86,22 +153,24 @@ export default {
   border: #8DD3BB solid 1px;
   text-align: center;
 }
-.AccountListBox button img {
-
+.AccountListBox button img{
+  margin-bottom: -2px;
+  margin-right: 4px;
 }
-#AccountList{
-  border: #42b983 solid 1px;
-  margin-top: 48px;
+.AccountList{
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 32px;
 }
 #AccountPage{
   text-align: left;
   width: 1232px;
   height: 593px;
-  border: #FF8682 solid 1px;
-  margin: 40px auto 0;
+  margin: 40px auto 119px;
+}
+#AccountPage h1{
+  margin-bottom: 48px;
 }
 .selectAcPage{
   text-align: left;
@@ -114,9 +183,9 @@ export default {
   border-bottom: #8DD3BB solid 4px;
 }
 .ChangeAccountMenu {
+  box-shadow: 0px 2px 5px #d3d3d3;
   display: flex;
   position: relative;
-  border: #FF8682 solid 1px;
   margin: 32px auto 0;
   width: 1232px;
   height: 80px;
@@ -163,11 +232,10 @@ export default {
   margin: -75px auto 0 ;
   width: 1232px;
   height: 241px;
-  border: #FF8682 solid 1px;
+
 }
 #accountProfileMain{
   margin: 0 auto;
-  border: #FF8682 solid 1px;
   width: 204px;
   height: 241px;
 }
@@ -177,7 +245,6 @@ export default {
   justify-content: space-between;
   margin: 105px auto 0px;
   width: 1232px;
-  border: #FF8682 solid 1px;
   overflow: hidden;
 }
 #CoverImg{
