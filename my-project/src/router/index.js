@@ -6,6 +6,7 @@ import HomePage from "../components/HomePage.vue";
 import HotelSearch from  '../components/HotelSearch.vue';
 import HeaderComponent from '../components/HeaderComponent.vue';
 import FooterComponent from "../components/FooterComponent.vue";
+import ProfileComponent from "@/components/ProfileComponent.vue";
 // import HotelDetail from '../components/HotelDetail.vue';
 // import PaymentPage from '../components/PaymentPage.vue';
 // import Favorites from '../components/Favorites.vue';
@@ -28,6 +29,7 @@ const router = createRouter({
         { path: '/hotelsearch', name: 'hotelsearch', component: HotelSearch },
         { path: '/headercomponent', name: 'headercomponent', component: HeaderComponent },
         { path: '/FooterComponent', name: 'FooterComponent', component: FooterComponent },
+        { path: '/ProfileComponent', name: 'ProfileComponent', component: ProfileComponent },
         // { path: '/hoteldetail', name: 'hoteldetail', component: HotelDetail },
         // { path: '/paymentpage', name: 'paymentpage', component: PaymentPage },
         // { path: '/favorites', name: 'favorites', component: Favorites },
