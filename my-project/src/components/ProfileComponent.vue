@@ -27,6 +27,7 @@ components: {
       </div>
     </div>
   </div>
+
 </template>
 
 <style >

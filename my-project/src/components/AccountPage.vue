@@ -47,7 +47,7 @@ export default {
     <button type="button" class="NOselectAcPage">결제수단</button>
   </div>
 <!--메뉴 선택시 나오는 화면 -->
-  <div id = "AccountPage">
+  <div id = "AccountPageMain">
     <h1>Account</h1>
    <div id = "ACListStyle">
 <!--     이름 리스트 박스-->
@@ -256,7 +256,7 @@ export default {
   width: 100%;
   margin-bottom: 32px;
 }
-#AccountPage{
+#AccountPageMain{
   text-align: left;
   width: 1232px;
   height: 593px;

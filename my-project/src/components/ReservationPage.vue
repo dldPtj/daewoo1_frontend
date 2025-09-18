@@ -14,11 +14,34 @@ export default {
 <template>
   <header-component/>
   <profile-component/>
+  <!--  프로필 아래 메뉴 선택 버튼 -->
+  <div class="ChangeAccountMenu">
+    <button type="button" class="NOselectAcPage">계정</button>
+    <a></a>
+    <button type="button" class="selectAcPage">내역</button>
+    <a></a>
+    <button type="button" class="NOselectAcPage">결제수단</button>
+  </div>
 
+  <div id="ReservationMain">
+    <h1>예약 내역</h1>
+    <div id="ReservationSub">
 
+    </div>
+  </div>
   <FooterComponent/>
 </template>
 
 <style>
-
+#ReservationMain{
+  text-align: left;
+  width: 1232px;
+  height: 593px;
+  margin: 40px auto 119px;
+}
+#ReservationSub{
+  width: 1232px;
+  height: 56px;
+  border: #FF8682 solid 1px;
+}
 </style>
