@@ -11,7 +11,7 @@
   <button @click="$router.push('/loginpage')">loginpage 이동</button>
   <button @click="$router.push('/account')">account 이동</button>
   <button @click="$router.push('/ProfileComponent')">ProfileComponent 이동</button>
-
+  <button @click="$router.push('/reservation')">Reservation 이동</button>
 </template>
 
 <style>

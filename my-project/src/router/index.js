@@ -11,7 +11,7 @@ import ProfileComponent from "@/components/ProfileComponent.vue";
 // import PaymentPage from '../components/PaymentPage.vue';
 // import Favorites from '../components/Favorites.vue';
 import AccountPage from '../components/AccountPage.vue';
-// import Reservation from '../components/Reservation.vue';
+import ReservationPage from '../components/ReservationPage.vue';
 // import PaymentAdd from '../components/PaymentAdd.vue';
 import LoginPage from '../components/LoginPage.vue';
 // import SignUp from '../components/SignUp.vue';
@@ -34,7 +34,7 @@ const router = createRouter({
         // { path: '/paymentpage', name: 'paymentpage', component: PaymentPage },
         // { path: '/favorites', name: 'favorites', component: Favorites },
         { path: '/account', name: 'account', component: AccountPage },
-        // { path: '/reservation', name: 'reservation', component: Reservation },
+        { path: '/reservation', name: 'reservation', component: ReservationPage },
         // { path: '/paymentadd', name: 'paymentadd', component: PaymentAdd },
         { path: '/loginpage', name: 'loginpage', component: LoginPage },
         // { path: '/signup', name: 'signup', component: SignUp },

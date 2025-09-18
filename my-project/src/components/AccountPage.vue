@@ -38,6 +38,7 @@ export default {
 <template>
   <HeaderComponent/>
   <ProfileComponent/>
+<!--  프로필 아래 메뉴 선택 버튼 -->
   <div class="ChangeAccountMenu">
     <button type="button" class="selectAcPage">계정</button>
     <a></a>
@@ -45,21 +46,25 @@ export default {
     <a></a>
     <button type="button" class="NOselectAcPage">결제수단</button>
   </div>
-
+<!--메뉴 선택시 나오는 화면 -->
   <div id = "AccountPage">
     <h1>Account</h1>
    <div id = "ACListStyle">
+<!--     이름 리스트 박스-->
     <div class = "AccountList">
       <div class="AccountListBox">
         <div class="ACDataBox">
           <a>Name</a>
+<!--          이름 정보가 저장되는 곳-->
           <div class="ACInsertData">
             이름이름이름
           </div>
         </div>
+<!--        버튼 클릭시 모달창 이동-->
         <button type="button" @click="ACModalOpen"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
+<!--     이메일 리스트 박스-->
     <div class = "AccountList">
       <div class="AccountListBox">
         <div class="ACDataBox">
@@ -71,6 +76,7 @@ export default {
         <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
+<!--     비밀번호 리스트 박스-->
     <div class = "AccountList">
       <div class="AccountListBox">
         <div class="ACDataBox">
@@ -82,6 +88,7 @@ export default {
         <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
+<!--    전화번호 리스트 박스-->
     <div class = "AccountList">
       <div class="AccountListBox">
         <div class="ACDataBox">
@@ -93,6 +100,7 @@ export default {
         <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
+<!--     주소 리스트 박스-->
     <div class = "AccountList">
       <div class="AccountListBox">
         <div class="ACDataBox">
@@ -104,6 +112,7 @@ export default {
         <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
+<!--     생일 리스트 박스-->
     <div class = "AccountList">
       <div class="AccountListBox">
         <div class="ACDataBox">
@@ -117,21 +126,25 @@ export default {
     </div>
    </div>
   </div>
-
+<!--이름 모달-->
   <div class="AccountModalWrap" v-show="ACModal">
     <div class="ACModalContainer">
+<!--      취소 버튼-->
       <img src="../assets/ModalClose.png" alt="취소 사진" @click="ACModalClose" class="ModalCloseBtn">
       <h1>이름 수정</h1>
       <div>
         <fieldset class="fieldModal">
           <legend class="LegendLogin">이름</legend>
+<!--          수정할 이름 입력 하는곳-->
           <input type="text" placeholder="이름을 입력하세요." class="LTextBox">
         </fieldset>
         <fieldset class="fieldModal">
           <legend class="LegendLogin">Password</legend>
+<!--          비밀번호 입력하는 곳-->
           <input type="password" placeholder="현재  비밀번호를 입력하세요." class="LTextBox">
         </fieldset>
       </div>
+<!--      클릭시 수정 완료-->
         <button type="button" class="ModalBtnStyle">수정</button>
     </div>
   </div>
