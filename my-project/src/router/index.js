@@ -6,11 +6,12 @@ import HomePage from "../components/HomePage.vue";
 import HotelSearch from  '../components/HotelSearch.vue';
 import HeaderComponent from '../components/HeaderComponent.vue';
 import FooterComponent from "../components/FooterComponent.vue";
+import ProfileComponent from "@/components/ProfileComponent.vue";
 // import HotelDetail from '../components/HotelDetail.vue';
 // import PaymentPage from '../components/PaymentPage.vue';
 // import Favorites from '../components/Favorites.vue';
-// import Account from '../components/Account.vue';
-// import Reservation from '../components/Reservation.vue';
+import AccountPage from '../components/AccountPage.vue';
+import ReservationPage from '../components/ReservationPage.vue';
 // import PaymentAdd from '../components/PaymentAdd.vue';
 import LoginPage from '../components/LoginPage.vue';
 // import SignUp from '../components/SignUp.vue';
@@ -28,11 +29,12 @@ const router = createRouter({
         { path: '/hotelsearch', name: 'hotelsearch', component: HotelSearch },
         { path: '/headercomponent', name: 'headercomponent', component: HeaderComponent },
         { path: '/FooterComponent', name: 'FooterComponent', component: FooterComponent },
+        { path: '/ProfileComponent', name: 'ProfileComponent', component: ProfileComponent },
         // { path: '/hoteldetail', name: 'hoteldetail', component: HotelDetail },
         // { path: '/paymentpage', name: 'paymentpage', component: PaymentPage },
         // { path: '/favorites', name: 'favorites', component: Favorites },
-        // { path: '/account', name: 'account', component: Account },
-        // { path: '/reservation', name: 'reservation', component: Reservation },
+        { path: '/account', name: 'account', component: AccountPage },
+        { path: '/reservation', name: 'reservation', component: ReservationPage },
         // { path: '/paymentadd', name: 'paymentadd', component: PaymentAdd },
         { path: '/loginpage', name: 'loginpage', component: LoginPage },
         // { path: '/signup', name: 'signup', component: SignUp },

@@ -97,12 +97,13 @@ import LoginImg2 from '../assets/LoginImg2.jpg'
       </div>
     </div>
       <div class="LoginImages">
-        <img :src="LoginImg" style="width: 612px; height: 816px" class="LoginIMG">
-       <div id = "PicBtnBoxes">
+        <transition name="fade-in">
+         <img :src="LoginImg" style="width: 612px; height: 816px" class="LoginIMG" alt="로그인시 나오는 사진">
+        </transition>
+        <div id = "PicBtnBoxes">
          <span style="margin-right: 8px">
           <button type="button" @click ="changeLoginImg(LoginImgBtn1), changLBtn(ChangeLBtn1)" class="NSelectPicBtn" :class="{'SelectPicBtn': ChangeLBtn1}"  ></button>
          </span>
-<!--         class="SelectPicBtn" class="NSelectPicBtn"-->
          <span style="margin-right: 8px">
           <button type="button" @click="changeLoginImg(LoginImgBtn2), changLBtn(ChangeLBtn2)" class="NSelectPicBtn" :class="{'SelectPicBtn': ChangeLBtn2}" ></button>
          </span>
@@ -144,10 +145,21 @@ import LoginImg2 from '../assets/LoginImg2.jpg'
     color: #112211;
   }
 
+ .fade-in-enter-active,
+ .fade-in-leave-active{
+    transition: opacity 0.5s ease;
+  }
+ .fade-in-enter-from,
+ .fade-in-leave-to{
+   opacity: 0;
+ }
+
+
 .LoginIMG{
   width: 618px;
   height: 816px;
 }
+
 .LegendLogin{
   text-align: left;
 }
