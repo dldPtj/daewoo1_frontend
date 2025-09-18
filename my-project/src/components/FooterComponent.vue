@@ -95,6 +95,7 @@
   width: 100%;
   height: 573px;
   border-radius: 30px;
+  margin: 200px auto;
 
 }
 .footerMain {
