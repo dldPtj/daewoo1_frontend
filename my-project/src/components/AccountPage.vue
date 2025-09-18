@@ -5,7 +5,31 @@ export default {
   components: {
     HeaderComponent: HeaderComponent,
     FooterComponent: FooterComponent,
-  }
+  },
+  data(){
+    return{
+      ACModal : false
+    };
+  },
+  methods:{
+    ACModalOpen(){
+      this.ACModal = !this.ACModal
+    },
+    ACModalClose(){
+      if(this.ACModal === true){
+        this.ACModal = false;
+      }
+    }
+  },
+  watch: {
+    ACModal: function(val) {
+      if(val){
+        document.body.style.overflow = 'hidden';
+      }else{
+        document.body.style.overflow = '';
+      }
+    }
+  },
 }
 </script>
 
@@ -29,9 +53,9 @@ export default {
   <div class="ChangeAccountMenu">
     <button type="button" class="selectAcPage">계정</button>
     <a></a>
-    <button type="button" class="selectAcPage">내역</button>
+    <button type="button" class="NOselectAcPage">내역</button>
     <a></a>
-    <button type="button" class="selectAcPage">결제수단</button>
+    <button type="button" class="NOselectAcPage">결제수단</button>
   </div>
 
   <div id = "AccountPage">
@@ -45,7 +69,7 @@ export default {
             이름이름이름
           </div>
         </div>
-        <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
+        <button type="button" @click="ACModalOpen"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
     <div class = "AccountList">
@@ -64,7 +88,7 @@ export default {
         <div class="ACDataBox">
           <a>Password</a>
           <div class="ACInsertData" id="ACPWData">
-            <input type="password" value="sdsd" readonly>
+            <input type="password" value="sdsd2323232" readonly>
           </div>
         </div>
         <button type="button"><img src="../assets/AccountBtnImg.png">change</button>
@@ -105,6 +129,25 @@ export default {
     </div>
    </div>
   </div>
+
+  <div class="AccountModalWrap" v-show="ACModal">
+    <div class="ACModalContainer">
+      <img src="../assets/ModalClose.png" alt="취소 사진" @click="ACModalClose" class="ModalCloseBtn">
+      <h1>이름 수정</h1>
+      <div>
+        <fieldset class="fieldModal">
+          <legend class="LegendLogin">이름</legend>
+          <input type="text" placeholder="이름을 입력하세요." class="LTextBox">
+        </fieldset>
+        <fieldset class="fieldModal">
+          <legend class="LegendLogin">Password</legend>
+          <input type="password" placeholder="현재  비밀번호를 입력하세요." class="LTextBox">
+        </fieldset>
+      </div>
+        <button type="button" class="ModalBtnStyle">수정</button>
+    </div>
+  </div>
+
   <FooterComponent/>
 </template>
 
@@ -114,6 +157,50 @@ export default {
   margin:0;
   padding: 0;
   box-sizing: border-box;
+}
+.fieldModal{
+  display: flex;
+  margin-bottom: 24px;
+  width: 460px;
+  height: 56px;
+  border-radius: 4px;
+}
+.ModalBtnStyle{
+  width: 100%;
+  height: 48px;
+  background-color: #8DD3BB;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.AccountModalWrap{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 8;
+}
+.ACModalContainer{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 45px;
+  box-sizing: border-box;
+  z-index: 9;
+}
+.ACModalContainer h1{
+  margin-bottom: 20px;
+}
+.ACModalContainer img {
+  display: flex;
+  position: relative;
+  margin-left: 440px;
 }
 #ACListStyle{
   box-shadow: 0px 2px 5px #d3d3d3;
@@ -153,6 +240,11 @@ export default {
   border: #8DD3BB solid 1px;
   text-align: center;
 }
+
+.AccountListBox button:hover{
+  background-color: #9e9a9a;
+  border: #8DD3BB solid 1px;
+}
 .AccountListBox button img{
   margin-bottom: -2px;
   margin-right: 4px;
@@ -181,6 +273,15 @@ export default {
   border: none;
   background-color: white;
   border-bottom: #8DD3BB solid 4px;
+}
+.NOselectAcPage{
+  text-align: left;
+  font-weight: bold;
+  margin: 0 180px 0 18px;
+  width: 215px;
+  height: 100%;
+  border: none;
+  background-color: white;
 }
 .ChangeAccountMenu {
   box-shadow: 0px 2px 5px #d3d3d3;
