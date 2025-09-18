@@ -275,9 +275,7 @@ export default {
     <div class="hotel-map">
       <div class="hotel-map-top">
         <div class="hotel-map-title">
-          <h1>
-          지도보기
-          </h1>
+          <h2>지도보기</h2>
         </div>
         <div class="googlemaps-btn">
           <button id="googlemaps-btn">
@@ -285,12 +283,10 @@ export default {
           </button>
         </div>
       </div>
-
       <!--지도-->
       <div class="map">
 
       </div>
-
       <!--주소-->
       <div class="hoteldetail-address">
         <img src="@/assets/ion-location.png"><span id="address">Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</span>
@@ -299,7 +295,7 @@ export default {
 
     <!--호텔 편의시설-->
     <div class="hotel-detail-amenities">
-      <div>
+      <div class="amenities-title">
         <h3>Amenitites</h3>
       </div>
       <div class="amenities-lists">
@@ -334,12 +330,48 @@ export default {
 </template>
 
 <style>
+.amenities-title {
+  margin: 50px auto;
+  text-align: left;
+  width: 1250px;
+}
+.hotel-detail-amenities {
+  border-bottom: #D9D9D9 solid 1px;
+  margin: 0 auto;
+  width: 1250px;
+}
+.hoteldetail-address {
+  text-align: left;
+  margin: 10px auto;
+  width: 1240px;
+  padding-bottom: 70px;
+  border-bottom: #D9D9D9 solid 1px;
+}
+.map {
+  width: 1232px;
+  height: 450px;
+  background-color: #e4ce9f;
+  margin: 0 auto;
+}
+#googlemaps-btn {
+  border: #8ae6b2 solid 1px;
+  border-radius: 5px;
+  background-color: #8ae6b2;
+  width: 180px;
+  height: 40px;
+}
+.hotel-map-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto;
+  width: 1240px;
+}
 #room-book-btn {
   border: #8ae6b2 solid 1px;
   border-radius: 5px;
   background-color: #8ae6b2;
-  width: 150px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
 }
 .room-book {
   margin: 0 0 0 50px;
@@ -369,7 +401,6 @@ export default {
 .hotel-leftrooms {
   margin: auto;
   max-width: 1250px;
-  flex-direction: column;
 }
 .hotelfeatures {
   border: #8ae6b2 solid 1px;
@@ -403,7 +434,7 @@ export default {
   margin: 20px auto;
 }
 .hotel-overview-title {
-  margin: 50px 0 10px 0;
+  margin: 40px 0 10px 0;
   text-align: left;
 }
 .hotel-overview {
