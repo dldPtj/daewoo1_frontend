@@ -6,7 +6,12 @@
       <span>{{ item.title }}</span>
       <span>{{ item.cityName }}</span>
     </div>
-
+    <hr>
+    <div v-if="soloData">
+      <span>{{soloData.id}}</span>
+      <span>{{soloData.title}}</span>
+    </div>
+    <hr>
 <!--    mainData에 title이 있다면 true 없다면 false-->
     <div v-if="mainData?.title"> 
       <span>{{ mainData.id }}</span>
@@ -27,6 +32,7 @@ export default {
       list: [],
       resultData: null,
       mainData: {},
+      soloData:{},
     }
   },
 
@@ -39,6 +45,8 @@ export default {
     const result2 = await  aTeamApi.get('/api/travel-packages/main');
     this.mainData = result2.data.data;
     console.log(this.mainData);
+
+    this.soloData = result.data.data[0];
   }
 }
 </script>
