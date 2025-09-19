@@ -26,7 +26,7 @@ export default {
   <div id="ReservationMain">
     <h1>예약 내역</h1>
     <div id="ReservationSub">
-
+      <h3>객실</h3>
     </div>
   </div>
   <FooterComponent/>
@@ -40,6 +40,9 @@ export default {
   margin: 40px auto 119px;
 }
 #ReservationSub{
+  display: flex;
+  position: relative;
+  margin: auto 0;
   width: 1232px;
   height: 56px;
   border: #FF8682 solid 1px;
