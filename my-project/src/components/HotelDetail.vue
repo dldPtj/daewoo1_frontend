@@ -299,18 +299,26 @@ export default {
         <h3>Amenitites</h3>
       </div>
       <div class="amenities-lists">
-        <div class="amenities-lists-1column">
-
-        </div>
-        <div class="amenities-lists-2column">
-
-        </div>
+        <ul class="amenities-lists-column" style="list-style: none">
+          <li><img src="@/assets/icon_pool.png">&nbsp;Outdoor pool</li>
+          <li><img src="@/assets/icon_pool.png">&nbsp;Indoor pool</li>
+          <li><img src="@/assets/icon_spa.png">&nbsp;Spa and wellness center</li>
+          <li><img src="@/assets/icon_restaurant.png">&nbsp;Restaurant</li>
+          <li><img src="@/assets/icon_room-service.png">&nbsp;Room service</li>
+        </ul>
+        <ul class="amenities-lists-column" style="list-style: none">
+          <li><img src="@/assets/icon_fitness.png">&nbsp;Fitness center</li>
+          <li><img src="@/assets/icon_wine.png">&nbsp;Bar/Lounge</li>
+          <li><img src="@/assets/icon_wifi.png">&nbsp;Free Wi-Fi</li>
+          <li><img src="@/assets/icon_breakfast.png">&nbsp;Tea/coffee machine</li>
+          <li class="lastlist">+<span id="left-amenities">24</span>&nbsp;more</li>
+        </ul>
       </div>
     </div>
     <!--호텔 리뷰-->
     <div class="hotel-reviews">
       <div class="hotel-reviews-top">
-        <div>
+        <div class="hotel-reviews-title">
           <h3>Reviews</h3>
         </div>
         <div class="write-review">
@@ -319,6 +327,19 @@ export default {
       </div>
 
       <div class="reviews-rating-avg">
+        <!--리뷰 평점-->
+        <div class="reviews-rating">
+          <span id="reviews-rating">4.2</span>
+        </div>
+        <!--리뷰 만족도와 개수-->
+        <div class="satis-count">
+          <div class="reviews-satisfaction">
+            <span id="satisfaction">Very Good</span>
+          </div>
+          <div class="reviews-count">
+            <span id="review-count">371</span>verified reviews
+          </div>
+        </div>
 
       </div>
     </div>
@@ -330,8 +351,55 @@ export default {
 </template>
 
 <style>
+#
+.satis-count {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+#reviews-rating {
+  font-size: 50px;
+  font-weight: bold;
+}
+.reviews-rating-avg {
+  display: flex;
+  justify-items: left;
+}
+#write-review-btn {
+  border: #8ae6b2 solid 1px;
+  border-radius: 5px;
+  background-color: #8ae6b2;
+  width: 130px;
+  height: 50px;
+}
+.hotel-reviews-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 70px auto 30px;
+}
+.hotel-reviews {
+  margin: 0 auto;
+  width: 1250px;
+}
+.lastlist {
+  color: #FF8682;
+  font-weight: bold;
+}
+.amenities-lists-column li {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.amenities-lists {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 400px;
+  text-align: left;
+  margin: 0 0 50px 0;
+}
 .amenities-title {
-  margin: 50px auto;
+  margin: 50px 0 30px 0;
   text-align: left;
   width: 1250px;
 }

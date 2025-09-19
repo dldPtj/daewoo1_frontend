@@ -1,14 +1,265 @@
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
+import { aTeamApi } from '@/util/axios';
 
 export default {
   components: {
     HeaderComponent: HeaderComponent,
+    FooterComponent: FooterComponent,
+  },
+  name: 'HomePage',
+  data() {
+    return {
+      list: [],
+      resultData: null,
+    }
+  },
+  async mounted() {
+    const result = await aTeamApi.get('/api/travel-packages/popular');
+    this.resultData = result;
+    this.list = this.resultData.data.data;
   }
 }
 
 
 </script>
+
+<template>
+  <!--HeaderComponent 부분-->
+  <HeaderComponent />
+
+  <!--메인 사진-->
+  <div class="main-photo">
+    <img src="@/assets/homepage-mainhotel-1.png" alt="메인호텔사진">
+  </div>
+
+<!--메인화면 부분-->
+  <!--메인화면 상단 검색 바-->
+  <div class="search-bar">
+      <div class="search-box-text">
+            <span>
+                Where are you staying?
+            </span>
+      </div>
+    <div class="search-box">
+        <form class="enter-destination">
+          <fieldset>
+            <legend>
+              &nbsp;Enter Destination&nbsp;
+            </legend>
+            <div class="search-bar-box">
+              <img src="@/assets/ion_bed.png" alt="침대 아이콘">&nbsp;도시와 호텔을 선택하세요
+            </div>
+          </fieldset>
+        </form>
+        <form class="check-in">
+          <fieldset>
+            <legend>
+              &nbsp;Check In&nbsp;
+            </legend>
+            <div class="search-bar-box">
+              <button id="checkin" onclick="showCalendar()">
+                날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="@/assets/calendar.png" alt="달력 아이콘">
+              </button>
+            </div>
+          </fieldset>
+        </form>
+        <form class="check-out">
+          <fieldset>
+            <legend>
+              &nbsp;Check Out&nbsp;
+            </legend>
+            <div class="search-bar-box">
+              <button id="checkout" onclick="showCalendar()">
+                날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="@/assets/calendar.png" alt="달력 아이콘">
+              </button>
+            </div>
+          </fieldset>
+        </form>
+        <form class="roomguests">
+          <fieldset>
+            <legend>
+              &nbsp;Room & Guests&nbsp;
+            </legend>
+            <div class="search-bar-box">
+              <img src="@/assets/ion_user.png" alt="유저 아이콘">&nbsp;방 개수, 인원 수를 선택하세요
+            </div>
+          </fieldset>
+        </form>
+    </div>
+  </div>
+
+  <!--도시 선택 부분-->
+  <div class="city-selection-bar">
+    <div class="city-selection-text">
+      <h2>
+        여행에 빠지다
+      </h2>
+      <br>
+      <h4>
+        특가상품으로 진행하는 여행을 예약해보세요
+      </h4>
+    </div>
+    <div class="city-see-all">
+      <button class="city-see-all-btn">See All</button>
+    </div>
+  </div>
+
+  <!--도시 대표 이미지-->
+  <div class="city-selection-imgs">
+    <!-- 첫번째 도시-->
+    <div class="first-city">
+      <img src="@/assets/melbourne.png">
+
+      <div class="city-item">
+        <div class="city-content">
+          <h3 v-for="item in list" :key="item" class="city-title">
+            {{ item.cityName }}
+          </h3>
+          <span class="city-detail"> <!--한줄(두줄)에는 공백포함 18자(40자)만 허용하기-->
+            Amazing journey
+          </span>
+        </div>
+        <div class="homepage-hotel-price">
+          <h3>
+            130,000원
+          </h3>
+        </div>
+        <div class="hotel-book-btn">
+          <button id="bookhotel">Book a Hotel</button>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!--두번째 도시-->
+    <div class="second-city">
+      <img src="@/assets/paris.png">
+
+      <div class="city-item">
+        <div class="city-content">
+          <h3 class="city-title">
+            파리
+          </h3>
+          <span class="city-detail">
+            A Paris Adventure
+          </span>
+        </div>
+        <div class="homepage-hotel-price">
+          <h3>
+            140,000원
+          </h3>
+        </div>
+        <div class="hotel-book-btn">
+          <button id="bookhotel">Book a Hotel</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!--세번째 도시-->
+    <div class="third-city">
+      <img src="@/assets/london.png">
+
+      <div class="city-item">
+        <div class="city-content">
+          <h3 class="city-title">
+            런던
+          </h3>
+          <span class="city-detail">
+            London eye adventurewwwwwwwwwwwwwwwwwwwwwwwwwwwww
+          </span>
+        </div>
+        <div class="homepage-hotel-price">
+          <h3>
+            150,000원
+          </h3>
+        </div>
+        <div class="hotel-book-btn">
+          <button id="bookhotel">Book a Hotel</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!--네번째 도시-->
+    <div class="fourth-city">
+      <img src="@/assets/colombia.png">
+
+      <div class="city-item">
+        <div class="city-content">
+          <h3 class="city-title">
+            콜롬비아
+          </h3>
+          <span class="city-detail">
+            Amazing streets
+          </span>
+        </div>
+        <div class="homepage-hotel-price">
+          <h3>
+            130,000원
+          </h3>
+        </div>
+        <div class="hotel-book-btn">
+          <button id="bookhotel">Book a Hotel</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+<!--투어 선택 부분-->
+  <div class="tour-selection-bar">
+    <div class="tour-selection-text">
+      <h2>
+        여행 더보기
+      </h2>
+      <br>
+      <h4>
+        Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.
+      </h4>
+    </div>
+    <div class="tour-see-all">
+      <button class="tour-see-all-btn">See All</button>
+    </div>
+  </div>
+
+  <!--투어 대표 이미지 및 설명-->
+  <div class="tour">
+    <div class="tour-description">
+      <h1>
+        말라카 투어
+        <br>
+        <br>
+      </h1>
+      <h5>
+        오래된 시간의 숨결이 머무는 도시, 말라카(Melaka).<br>말레이시아의 작은 보석 같은 이 도시는 동서양 문화가 만나는 관문이자, 세계문화유산으로 지정된 매혹적인 여행지입니다. 단 하루만 머물러도 그 깊은 매력에 빠지고, 며칠을 살아보면 다시 찾고 싶은 마음이 샘솟는 곳. 이제 저희 여행사가 준비한 특별한 말라카 투어상품과 함께 그 여정을 시작해 보세요.
+      </h5>
+      <div class="tour-price">
+        From
+        <br>
+        <h2>$700</h2>
+      </div>
+      <div class="flight-book-btn">
+        <button id="bookflight">
+          Book Flight
+        </button>
+      </div>
+    </div>
+    <div class="tour-imgs">
+      <img src="@/assets/melaka-tour1.png">
+      <img src="@/assets/melaka-tour2.png">
+      <img src="@/assets/melaka-tour3.png">
+      <img src="@/assets/melaka-tour4.png">
+    </div>
+  </div>
+
+  <FooterComponent/>
+</template>
 
 <style>
 * {
@@ -223,236 +474,3 @@ export default {
 }
 
 </style>
-
-<template>
-  <HeaderComponent />
-
-<!--HeaderComponent 부분-->
-  <div class="main-photo">
-    <img src="@/assets/homepage-mainhotel.png" alt="메인호텔사진">
-  </div>
-
-<!--메인화면 부분-->
-  <!--메인화면 상단 검색 바-->
-  <div class="search-bar">
-      <div class="search-box-text">
-            <span>
-                Where are you staying?
-            </span>
-      </div>
-    <div class="search-box">
-        <form class="enter-destination">
-          <fieldset>
-            <legend>
-              &nbsp;Enter Destination&nbsp;
-            </legend>
-            <div class="search-bar-box">
-              <img src="@/assets/ion_bed.png" alt="침대 아이콘">&nbsp;도시와 호텔을 선택하세요
-            </div>
-          </fieldset>
-        </form>
-        <form class="check-in">
-          <fieldset>
-            <legend>
-              &nbsp;Check In&nbsp;
-            </legend>
-            <div class="search-bar-box">
-              <button id="checkin" onclick="showCalendar()">
-                날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="@/assets/calendar.png" alt="달력 아이콘">
-              </button>
-            </div>
-          </fieldset>
-        </form>
-        <form class="check-out">
-          <fieldset>
-            <legend>
-              &nbsp;Check Out&nbsp;
-            </legend>
-            <div class="search-bar-box">
-              <button id="checkout" onclick="showCalendar()">
-                날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="@/assets/calendar.png" alt="달력 아이콘">
-              </button>
-            </div>
-          </fieldset>
-        </form>
-        <form class="roomguests">
-          <fieldset>
-            <legend>
-              &nbsp;Room & Guests&nbsp;
-            </legend>
-            <div class="search-bar-box">
-              <img src="@/assets/ion_user.png" alt="유저 아이콘">&nbsp;방 개수, 인원 수를 선택하세요
-            </div>
-          </fieldset>
-        </form>
-    </div>
-  </div>
-
-  <!--도시 선택 부분-->
-  <div class="city-selection-bar">
-    <div class="city-selection-text">
-      <h2>
-        여행에 빠지다
-      </h2>
-      <br>
-      <h4>
-        특가상품으로 진행하는 여행을 예약해보세요
-      </h4>
-    </div>
-    <div class="city-see-all">
-      <button class="city-see-all-btn">See All</button>
-    </div>
-  </div>
-
-  <!--도시 대표 이미지-->
-  <div class="city-selection-imgs">
-    <!-- 첫번째 도시-->
-    <div class="first-city">
-      <img src="@/assets/melbourne.png">
-
-      <div class="city-item">
-        <div class="city-content">
-          <h3 class="city-title">
-            멘버른
-          </h3>
-          <span class="city-detail"> <!--한줄(두줄)에는 공백포함 18자(40자)만 허용하기-->
-            Amazing journey
-          </span>
-        </div>
-        <div class="homepage-hotel-price">
-          <h3>
-            130,000원
-          </h3>
-        </div>
-        <div class="hotel-book-btn">
-          <button id="bookhotel">Book a Hotel</button>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!--두번째 도시-->
-    <div class="second-city">
-      <img src="@/assets/paris.png">
-
-      <div class="city-item">
-        <div class="city-content">
-          <h3 class="city-title">
-            파리
-          </h3>
-          <span class="city-detail">
-            A Paris Adventure
-          </span>
-        </div>
-        <div class="homepage-hotel-price">
-          <h3>
-            140,000원
-          </h3>
-        </div>
-        <div class="hotel-book-btn">
-          <button id="bookhotel">Book a Hotel</button>
-        </div>
-      </div>
-
-    </div>
-
-    <!--세번째 도시-->
-    <div class="third-city">
-      <img src="@/assets/london.png">
-
-      <div class="city-item">
-        <div class="city-content">
-          <h3 class="city-title">
-            런던
-          </h3>
-          <span class="city-detail">
-            London eye adventurewwwwwwwwwwwwwwwwwwwwwwwwwwwww
-          </span>
-        </div>
-        <div class="homepage-hotel-price">
-          <h3>
-            150,000원
-          </h3>
-        </div>
-        <div class="hotel-book-btn">
-          <button id="bookhotel">Book a Hotel</button>
-        </div>
-      </div>
-
-    </div>
-
-    <!--네번째 도시-->
-    <div class="fourth-city">
-      <img src="@/assets/colombia.png">
-
-      <div class="city-item">
-        <div class="city-content">
-          <h3 class="city-title">
-            콜롬비아
-          </h3>
-          <span class="city-detail">
-            Amazing streets
-          </span>
-        </div>
-        <div class="homepage-hotel-price">
-          <h3>
-            130,000원
-          </h3>
-        </div>
-        <div class="hotel-book-btn">
-          <button id="bookhotel">Book a Hotel</button>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-
-<!--투어 선택 부분-->
-  <div class="tour-selection-bar">
-    <div class="tour-selection-text">
-      <h2>
-        여행 더보기
-      </h2>
-      <br>
-      <h4>
-        Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.
-      </h4>
-    </div>
-    <div class="tour-see-all">
-      <button class="tour-see-all-btn">See All</button>
-    </div>
-  </div>
-
-  <!--투어 대표 이미지 및 설명-->
-  <div class="tour">
-    <div class="tour-description">
-      <h1>
-        말라카 투어
-        <br>
-        <br>
-      </h1>
-      <h5>
-        오래된 시간의 숨결이 머무는 도시, 말라카(Melaka).<br>말레이시아의 작은 보석 같은 이 도시는 동서양 문화가 만나는 관문이자, 세계문화유산으로 지정된 매혹적인 여행지입니다. 단 하루만 머물러도 그 깊은 매력에 빠지고, 며칠을 살아보면 다시 찾고 싶은 마음이 샘솟는 곳. 이제 저희 여행사가 준비한 특별한 말라카 투어상품과 함께 그 여정을 시작해 보세요.
-      </h5>
-      <div class="tour-price">
-        From
-        <br>
-        <h2>$700</h2>
-      </div>
-      <div class="flight-book-btn">
-        <button id="bookflight">
-          Book Flight
-        </button>
-      </div>
-    </div>
-    <div class="tour-imgs">
-      <img src="@/assets/melaka-tour1.png">
-      <img src="@/assets/melaka-tour2.png">
-      <img src="@/assets/melaka-tour3.png">
-      <img src="@/assets/melaka-tour4.png">
-    </div>
-  </div>
-</template>
