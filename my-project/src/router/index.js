@@ -19,6 +19,7 @@ import LoginPage from '../components/LoginPage.vue';
 // import Findpw from '../components/Findpw.vue';
 // import Identification from '../components/Identification.vue';
 // import Resetpw from '../components/Resetpw.vue';
+import TestAxios from "@/components/TestAxios.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -42,6 +43,7 @@ const router = createRouter({
         // { path: '/findpw', name: 'findpw', component: Findpw },
         // { path: '/identification', name: 'identification', component: Identification },
         // { path: '/resetpw', name: 'resetpw', component: Resetpw },
+        { path: '/test', name: 'TestAxois', component: TestAxios },
     ],
 });
 
