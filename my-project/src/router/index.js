@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import PageMove from '../components/PageMove.vue';
 import HomePage from "../components/HomePage.vue";
 import HotelSearch from  '../components/HotelSearch.vue';
+import HotelSearchTest from "@/components/HotelSearchTest.vue";
 import HeaderComponent from '../components/HeaderComponent.vue';
 import FooterComponent from "../components/FooterComponent.vue";
 import HotelDetail from '../components/HotelDetail.vue';
@@ -27,6 +28,7 @@ const router = createRouter({
         { path: '/', name: 'pagemove', component: PageMove },
         { path: '/homepage', name: 'homepage', component: HomePage },
         { path: '/hotelsearch', name: 'hotelsearch', component: HotelSearch },
+        { path: '/hotelsearchtest', name: 'hotelsearch', component: HotelSearchTest },
         { path: '/headercomponent', name: 'headercomponent', component: HeaderComponent },
         { path: '/FooterComponent', name: 'FooterComponent', component: FooterComponent },
         { path: '/hoteldetail', name: 'hoteldetail', component: HotelDetail },
