@@ -30,7 +30,7 @@ export default {
         </div>
         <!--호텔 위치-->
         <div class="hoteldetail-location">
-          <img src="@/assets/ion-location.png">
+          <img src="../assets/ion-location.png">
           <span id="address">
             <small>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</small>
           </span>
@@ -62,12 +62,12 @@ export default {
         <div class="hoteldetail-btns">
           <div class="hoteldetail-heart">
             <button id="hoteldetail-favorite-btn">
-              <img src="@/assets/emptyheart.png">
+              <img src="../assets/emptyheart.png">
             </button>
           </div>
           <div class="hoteldetail-share">
             <button id="hoteldetail-share-btn">
-              <img src="@/assets/share.png">
+              <img src="../assets/share.png">
             </button>
           </div>
           <div class="hoteldetail-book">
@@ -84,12 +84,12 @@ export default {
     <!--호텔 이미지-->
     <div class="hotel-detail-img">
       <div class="hoteldetail-img-main">
-        <img src="@/assets/hoteldetail-main-img.png">
+        <img src="../assets/hoteldetail-main-img.png">
       </div>
       <div class="hoteldetail-imgs">
         <div class="hoteldetail-imgs-up">
           <div class="hoteldetail-img-1">
-            <img src="@/assets/hoteldetail-img-1.png">
+            <img src="../assets/hoteldetail-img-1.png">
           </div>
           <div class="hoteldetail-img-2">
             <img src="../assets/hoteldetail-img-2.png">
@@ -100,7 +100,7 @@ export default {
             <img src="../assets/hoteldetail-img-3.png">
           </div>
           <div class="hoteldetail-img-4">
-            <img src="@/assets/hoteldetail-img-4.png">
+            <img src="../assets/hoteldetail-img-4.png">
           </div>
         </div>
       </div>
@@ -131,7 +131,7 @@ export default {
 
         <div class="hotelfeatures">
           <div class="stars-img">
-            <img src="@/assets/stars.png">
+            <img src="../assets/stars.png">
           </div>
           <div class="hotel-feature">
             <span id="feature-1">Near park</span>
@@ -139,7 +139,7 @@ export default {
         </div>
         <div class="hotelfeatures">
           <div class="stars-img">
-            <img src="@/assets/stars.png">
+            <img src="../assets/stars.png">
           </div>
           <div class="hotel-feature">
             <span id="feature-2">Near nightlife</span>
@@ -147,7 +147,7 @@ export default {
         </div>
         <div class="hotelfeatures">
           <div class="stars-img">
-            <img src="@/assets/stars.png">
+            <img src="../assets/stars.png">
           </div>
           <div class="hotel-feature">
             <span id="feature-3">Near theater</span>
@@ -155,7 +155,7 @@ export default {
         </div>
         <div class="hotelfeatures">
           <div class="stars-img">
-            <img src="@/assets/stars.png">
+            <img src="../assets/stars.png">
           </div>
           <div class="hotel-feature">
             <span id="feature-4">Clean Hotel</span>
@@ -176,7 +176,7 @@ export default {
         <div class="leftroom-sec">
           <!--객실 이미지-->
           <div class="leftroom-img">
-            <img src="@/assets/leftroom-1.png">
+            <img src="../assets/leftroom-1.png">
           </div>
           <!--객실 타입-->
           <div class="leftroom-type">
@@ -201,7 +201,7 @@ export default {
         <div class="leftroom-sec">
           <!--객실 이미지-->
           <div class="leftroom-img">
-            <img src="@/assets/leftroom-2.png">
+            <img src="../assets/leftroom-2.png">
           </div>
           <!--객실 타입-->
           <div class="leftroom-type">
@@ -226,7 +226,7 @@ export default {
         <div class="leftroom-sec">
           <!--객실 이미지-->
           <div class="leftroom-img">
-            <img src="@/assets/leftroom-3.png">
+            <img src="../assets/leftroom-3.png">
           </div>
           <!--객실 타입-->
           <div class="leftroom-type">
@@ -251,7 +251,7 @@ export default {
         <div class="leftroom-sec">
           <!--객실 이미지-->
           <div class="leftroom-img">
-            <img src="@/assets/leftroom-4.png">
+            <img src="../assets/leftroom-4.png">
           </div>
           <!--객실 타입-->
           <div class="leftroom-type">
@@ -289,7 +289,7 @@ export default {
       </div>
       <!--주소-->
       <div class="hoteldetail-address">
-        <img src="@/assets/ion-location.png"><span id="address">Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</span>
+        <img src="../assets/ion-location.png"><span id="address">Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</span>
       </div>
     </div>
 
@@ -300,17 +300,17 @@ export default {
       </div>
       <div class="amenities-lists">
         <ul class="amenities-lists-column" style="list-style: none">
-          <li><img src="@/assets/icon_pool.png">&nbsp;Outdoor pool</li>
-          <li><img src="@/assets/icon_pool.png">&nbsp;Indoor pool</li>
-          <li><img src="@/assets/icon_spa.png">&nbsp;Spa and wellness center</li>
-          <li><img src="@/assets/icon_restaurant.png">&nbsp;Restaurant</li>
-          <li><img src="@/assets/icon_room-service.png">&nbsp;Room service</li>
+          <li><img src="../assets/icon_pool.png">&nbsp;Outdoor pool</li>
+          <li><img src="../assets/icon_pool.png">&nbsp;Indoor pool</li>
+          <li><img src="../assets/icon_spa.png">&nbsp;Spa and wellness center</li>
+          <li><img src="../assets/icon_restaurant.png">&nbsp;Restaurant</li>
+          <li><img src="../assets/icon_room-service.png">&nbsp;Room service</li>
         </ul>
         <ul class="amenities-lists-column" style="list-style: none">
-          <li><img src="@/assets/icon_fitness.png">&nbsp;Fitness center</li>
-          <li><img src="@/assets/icon_wine.png">&nbsp;Bar/Lounge</li>
-          <li><img src="@/assets/icon_wifi.png">&nbsp;Free Wi-Fi</li>
-          <li><img src="@/assets/icon_breakfast.png">&nbsp;Tea/coffee machine</li>
+          <li><img src="../assets/icon_fitness.png">&nbsp;Fitness center</li>
+          <li><img src="../assets/icon_wine.png">&nbsp;Bar/Lounge</li>
+          <li><img src="../assets/icon_wifi.png">&nbsp;Free Wi-Fi</li>
+          <li><img src="../assets/icon_breakfast.png">&nbsp;Tea/coffee machine</li>
           <li class="lastlist">+<span id="left-amenities">24</span>&nbsp;more</li>
         </ul>
       </div>

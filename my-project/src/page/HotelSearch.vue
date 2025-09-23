@@ -1,12 +1,25 @@
 <script >
 import HeaderComponent from "@/components/HeaderComponent.vue";
-import FooterComponent from  "@/components/FooterComponent.vue"
+import FooterComponent from "@/components/FooterComponent.vue";
+import {aTeamApi} from "@/util/axios";
 
 
 export default {
   components: {
     HeaderComponent: HeaderComponent,
     FooterComponent: FooterComponent,
+  },
+  name: 'HotelSearch',
+  data() {
+    return {
+      list:[],
+      resultData: null,
+    }
+  },
+  async mounted(){
+    const result = await aTeamApi.get('/api/hotels/filter');
+    this.resultData=result;
+    this.list = this.resultData.data.data;
   }
 }
 </script>
@@ -24,7 +37,7 @@ export default {
             &nbsp;Enter Destination&nbsp;
           </legend>
           <div class="hotel-search-bar-box">
-            <img src="@/assets/ion_bed.png" alt="침대 아이콘">&nbsp;도시와 호텔을 선택하세요
+            <img src="../assets/ion_bed.png" alt="침대 아이콘">&nbsp;도시와 호텔을 선택하세요
           </div>
         </fieldset>
       </form>
@@ -35,7 +48,7 @@ export default {
           </legend>
           <div class="hotel-search-bar-box">
             <button id="checkin" onclick="showCalendar()">
-              날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="@/assets/calendar.png" alt="달력 아이콘">
+              날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="../assets/calendar.png" alt="달력 아이콘">
             </button>
           </div>
         </fieldset>
@@ -47,7 +60,7 @@ export default {
           </legend>
           <div class="hotel-search-bar-box">
             <button id="checkout" onclick="showCalendar()">
-              날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="@/assets/calendar.png" alt="달력 아이콘">
+              날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="../assets/calendar.png" alt="달력 아이콘">
             </button>
           </div>
         </fieldset>
@@ -58,13 +71,13 @@ export default {
             &nbsp;Room & Guests&nbsp;
           </legend>
           <div class="hotel-search-bar-box">
-            <img src="@/assets/ion_user.png" alt="유저 아이콘">&nbsp;방 개수, 인원 수를 선택하세요
+            <img src="../assets/ion_user.png" alt="유저 아이콘">&nbsp;방 개수, 인원 수를 선택하세요
           </div>
         </fieldset>
       </form>
       <div class="hotel-search-btn">
         <button id="hotel-search-btn">
-          <img src="@/assets/search.png">
+          <img src="../assets/search.png">
         </button>
       </div>
     </div>
@@ -136,7 +149,7 @@ export default {
         <!--첫번째 호텔-->
         <div class="hotel-1">
           <div class="hotel-img">
-            <img src="@/assets/hotel-img-1.png">
+            <img src="../assets/hotel-img-1.png">
             <div class="hotel-img-count">
               9 images
             </div>
@@ -151,7 +164,7 @@ export default {
               </div>
               <!--호텔 위치-->
               <div class="hotel-location">
-                <img src="@/assets/ion-location.png">
+                <img src="../assets/ion-location.png">
                 <span id="address">
                   <small>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 344371111111111111111111111111111111111111111111111</small>
                 </span>
@@ -165,7 +178,7 @@ export default {
                 </div>
                 <!--편의시설-->
                 <div class="hotel-amenities">
-                  <img src="@/assets/amenities.png"><strong>+<span id="amenities">20</span></strong>&nbsp;Amenities
+                  <img src="../assets/amenities.png"><strong>+<span id="amenities">20</span></strong>&nbsp;Amenities
                 </div>
               </div>
 
@@ -190,7 +203,7 @@ export default {
               <!--호텔 찜하기 버튼-->
               <div class="hotel-liked">
                 <button id="hotel-liked-btn">
-                  <img src="@/assets/heart.png">
+                  <img src="../assets/heart.png">
                 </button>
               </div>
               <!--호텔 보기 버튼-->
@@ -219,7 +232,7 @@ export default {
         <!--두번째 호텔-->
         <div class="hotel-2">
           <div class="hotel-img">
-            <img src="@/assets/hotel-img-2.png">
+            <img src="../assets/hotel-img-2.png">
             <div class="hotel-img-count">
               9 images
             </div>
@@ -234,7 +247,7 @@ export default {
             </div>
             <!--호텔 위치-->
             <div class="hotel-location">
-              <img src="@/assets/ion-location.png">
+              <img src="../assets/ion-location.png">
               <span id="address">
                 <small>Kucukayasofya No. 40 Sultanahmet, Istanbul 34022</small>
               </span>
@@ -248,7 +261,7 @@ export default {
               </div>
               <!--편의시설-->
               <div class="hotel-amenities">
-                <img src="@/assets/amenities.png"><strong>+<span id="amenities">20</span></strong>&nbsp;Amenities
+                <img src="../assets/amenities.png"><strong>+<span id="amenities">20</span></strong>&nbsp;Amenities
               </div>
             </div>
 
@@ -273,7 +286,7 @@ export default {
               <!--호텔 찜하기 버튼-->
               <div class="hotel-liked">
                 <button id="hotel-liked-btn">
-                  <img src="@/assets/heart.png">
+                  <img src="../assets/heart.png">
                 </button>
               </div>
               <!--호텔 보기 버튼-->
@@ -303,7 +316,7 @@ export default {
         <!--세번째 호텔-->
         <div class="hotel-3">
           <div class="hotel-img">
-            <img src="@/assets/hotel-img-3.png">
+            <img src="../assets/hotel-img-3.png">
             <div class="hotel-img-count">
               9 images
             </div>
@@ -318,7 +331,7 @@ export default {
             </div>
             <!--호텔 위치-->
             <div class="hotel-location">
-              <img src="@/assets/ion-location.png">
+              <img src="../assets/ion-location.png">
               <span id="address">
                 <small>Kucukayasofya No. 40 Sultanahmet, Istanbul 34022</small>
               </span>
@@ -332,7 +345,7 @@ export default {
               </div>
               <!--편의시설-->
               <div class="hotel-amenities">
-                <img src="@/assets/amenities.png"><strong>+<span id="amenities">20</span></strong>&nbsp;Amenities
+                <img src="../assets/amenities.png"><strong>+<span id="amenities">20</span></strong>&nbsp;Amenities
               </div>
             </div>
 
@@ -357,7 +370,7 @@ export default {
               <!--호텔 찜하기 버튼-->
               <div class="hotel-liked">
                 <button id="hotel-liked-btn">
-                  <img src="@/assets/heart.png">
+                  <img src="../assets/heart.png">
                 </button>
               </div>
               <!--호텔 보기 버튼-->
@@ -385,7 +398,7 @@ export default {
         <!--네번째 호텔-->
         <div class="hotel-4">
           <div class="hotel-img">
-            <img src="@/assets/hotel-img-4.png">
+            <img src="../assets/hotel-img-4.png">
             <div class="hotel-img-count">
               9 images
             </div>
@@ -400,7 +413,7 @@ export default {
             </div>
             <!--호텔 위치-->
             <div class="hotel-location">
-              <img src="@/assets/ion-location.png">
+              <img src="../assets/ion-location.png">
               <span id="address">
                 <small>Kucukayasofya No. 40 Sultanahmet, Istanbul 34022</small>
               </span>
@@ -414,7 +427,7 @@ export default {
               </div>
               <!--편의시설-->
               <div class="hotel-amenities">
-                <img src="@/assets/amenities.png"><strong>+<span id="amenities">20</span></strong>&nbsp;Amenities
+                <img src="../assets/amenities.png"><strong>+<span id="amenities">20</span></strong>&nbsp;Amenities
               </div>
             </div>
 
@@ -439,7 +452,7 @@ export default {
               <!--호텔 찜하기 버튼-->
               <div class="hotel-liked">
                 <button id="hotel-liked-btn">
-                  <img src="@/assets/heart.png">
+                  <img src="../assets/heart.png">
                 </button>
               </div>
               <!--호텔 보기 버튼-->
