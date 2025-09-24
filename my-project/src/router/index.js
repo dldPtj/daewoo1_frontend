@@ -1,20 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 // 뷰 컴포넌트 import
-import PageMove from '../components/PageMove.vue';
-import HomePage from "../components/HomePage.vue";
-import HotelSearch from  '../components/HotelSearch.vue';
-import HotelSearchTest from "@/components/HotelSearchTest.vue";
+import PageMove from '../page/PageMove.vue';
+import HomePage from "../page/HomePage.vue";
+import HotelSearch from '../page/HotelSearch.vue';
 import HeaderComponent from '../components/HeaderComponent.vue';
 import FooterComponent from "../components/FooterComponent.vue";
-import HotelDetail from '../components/HotelDetail.vue';
+import HotelDetail from '../page/HotelDetail.vue';
 import ProfileComponent from "@/components/ProfileComponent.vue";
 // import PaymentPage from '../components/PaymentPage.vue';
 // import Favorites from '../components/Favorites.vue';
-import AccountPage from '../components/AccountPage.vue';
-import ReservationPage from '../components/ReservationPage.vue';
+import AccountPage from '../page/AccountPage.vue';
+import ReservationPage from '../page/ReservationPage.vue';
 // import PaymentAdd from '../components/PaymentAdd.vue';
-import LoginPage from '../components/LoginPage.vue';
+import LoginPage from '../page/LoginPage.vue';
 // import SignUp from '../components/SignUp.vue';
 // import FirstPaymentAdd from '../components/FirstPaymentAdd.vue';
 // import Findpw from '../components/Findpw.vue';
@@ -28,7 +27,6 @@ const router = createRouter({
         { path: '/', name: 'pagemove', component: PageMove },
         { path: '/homepage', name: 'homepage', component: HomePage },
         { path: '/hotelsearch', name: 'hotelsearch', component: HotelSearch },
-        { path: '/hotelsearchtest', name: 'hotelsearch', component: HotelSearchTest },
         { path: '/headercomponent', name: 'headercomponent', component: HeaderComponent },
         { path: '/FooterComponent', name: 'FooterComponent', component: FooterComponent },
         { path: '/hoteldetail', name: 'hoteldetail', component: HotelDetail },
