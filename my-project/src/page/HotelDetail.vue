@@ -351,7 +351,6 @@ export default {
 </template>
 
 <style>
-#
 .satis-count {
   display: flex;
   flex-direction: column;
