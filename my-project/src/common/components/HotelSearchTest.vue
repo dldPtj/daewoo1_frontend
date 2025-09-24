@@ -1,6 +1,6 @@
 <script >
-import HeaderComponent from "@/components/HeaderComponent.vue";
-import FooterComponent from  "@/components/FooterComponent.vue"
+import HeaderComponent from "@/common/components/HeaderComponent.vue";
+import FooterComponent from "@/common/components/FooterComponent.vue"
 import HotelItem from "@/common/components/HotelItem.vue";
 import axios from "@/common/commonAxios.js";
 
@@ -38,7 +38,7 @@ export default {
             &nbsp;Enter Destination&nbsp;
           </legend>
           <div class="hotel-search-bar-box">
-            <img src="@/assets/ion_bed.png" alt="침대 아이콘">&nbsp;도시와 호텔을 선택하세요
+            <img src="../../assets/ion_bed.png" alt="침대 아이콘">&nbsp;도시와 호텔을 선택하세요
           </div>
         </fieldset>
       </form>
@@ -49,7 +49,7 @@ export default {
           </legend>
           <div class="hotel-search-bar-box">
             <button id="checkin" onclick="showCalendar()">
-              날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="@/assets/calendar.png" alt="달력 아이콘">
+              날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="../../assets/calendar.png" alt="달력 아이콘">
             </button>
           </div>
         </fieldset>
@@ -61,7 +61,7 @@ export default {
           </legend>
           <div class="hotel-search-bar-box">
             <button id="checkout" onclick="showCalendar()">
-              날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="@/assets/calendar.png" alt="달력 아이콘">
+              날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="../../assets/calendar.png" alt="달력 아이콘">
             </button>
           </div>
         </fieldset>
@@ -72,13 +72,13 @@ export default {
             &nbsp;Room & Guests&nbsp;
           </legend>
           <div class="hotel-search-bar-box">
-            <img src="@/assets/ion_user.png" alt="유저 아이콘">&nbsp;방 개수, 인원 수를 선택하세요
+            <img src="../../assets/ion_user.png" alt="유저 아이콘">&nbsp;방 개수, 인원 수를 선택하세요
           </div>
         </fieldset>
       </form>
       <div class="hotel-search-btn">
         <button id="hotel-search-btn">
-          <img src="@/assets/search.png">
+          <img src="../../assets/search.png">
         </button>
       </div>
     </div>

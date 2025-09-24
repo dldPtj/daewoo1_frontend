@@ -1,7 +1,7 @@
 <script >
-import HeaderComponent from "@/components/HeaderComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
-import ProfileComponent from "@/components/ProfileComponent.vue";
+import HeaderComponent from "@/common/components/HeaderComponent.vue";
+import FooterComponent from "@/common/components/FooterComponent.vue";
+import ProfileComponent from "@/common/components/ProfileComponent.vue";
 export default {
   components: {
     HeaderComponent: HeaderComponent,

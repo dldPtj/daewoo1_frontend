@@ -32,17 +32,17 @@
           </div>
         </div>
 <!--        오른쪽 위 메일박스 사진-->
-        <img src="../assets/mailBox.png" id="mailBox">
+        <img src="../../assets/mailBox.png" id="mailBox">
       </div>
 <!--      전체 컨테이너 아래-->
       <div class="footerMain">
         <div class="MainText">
 <!--          왼쪽 위 아이콘 박스 -->
             <div id = "iconBox">
-              <img src="../assets/faceBook.png" class="icons">
-              <img src="../assets/akar-icons_twitter-fill.png" class="icons">
-              <img src="../assets/akar-icons_youtube-fill.png" class="icons">
-              <img src="../assets/ant-design_instagram-filled.png" class = "icons">
+              <img src="../../assets/faceBook.png" class="icons">
+              <img src="../../assets/akar-icons_twitter-fill.png" class="icons">
+              <img src="../../assets/akar-icons_youtube-fill.png" class="icons">
+              <img src="../../assets/ant-design_instagram-filled.png" class = "icons">
             </div>
           <div class="MainTextBox">
             <div class= "boxStyle">

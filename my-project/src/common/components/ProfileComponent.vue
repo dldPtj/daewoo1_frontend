@@ -1,5 +1,5 @@
 <script >
-import HeaderComponent from "@/components/HeaderComponent.vue";
+import HeaderComponent from "@/common/components/HeaderComponent.vue";
 
 export default{
   components: {HeaderComponent}
@@ -13,13 +13,13 @@ components: {
 <template>
   <HeaderComponent/>
   <div id ="accountImgMain">
-    <img src="../assets/AcoountCoverDefault.jpg" id="CoverImg">
-    <button type="button" id = "accountImgUpload"><img src="../assets/AcoountUploadImgIcon.png"><a>upload new cover</a></button>
+    <img src="../../assets/AcoountCoverDefault.jpg" id="CoverImg">
+    <button type="button" id = "accountImgUpload"><img src="../../assets/AcoountUploadImgIcon.png"><a>upload new cover</a></button>
   </div>
   <div id = "accountProfile">
     <div id = "accountProfileMain">
       <div id="AccountProfileImg">
-        <div id="ProfileImgModify"><img src="../assets/Pencil.png"></div>
+        <div id="ProfileImgModify"><img src="../../assets/Pencil.png"></div>
       </div>
       <div id ="AccountProfileMainT">
         <h3>프로필 이름</h3>

@@ -10,7 +10,7 @@
       <!-- 왼쪽 -->
       <div class="item">
                 <span>
-                    <img src="../assets/ion_bed.png" alt="침대 사진">
+                    <img src="../../assets/ion_bed.png" alt="침대 사진">
                     hotels
                 </span>
       </div>
@@ -18,7 +18,7 @@
       <div class="item">
         <div class="flex vertical-center">
           <!-- 오른쪽 첫번째 -->
-          <img src="../assets/heart.png" alt="하트 사진">
+          <img src="../../assets/heart.png" alt="하트 사진">
           <span>
                         찜하기
                     </span>
