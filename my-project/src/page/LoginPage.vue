@@ -1,7 +1,7 @@
 <script>
-import eyeoff from  '../assets/Eye off.png'
-import eyeon from  '../assets/Eye.png'
-import LoginImg1 from  '../assets/LoginImg1.jpg'
+import eyeoff from '../assets/Eye off.png'
+import eyeon from '../assets/Eye.png'
+import LoginImg1 from '../assets/LoginImg1.jpg'
 import LoginImg2 from '../assets/LoginImg2.jpg'
   export default {
     data() {

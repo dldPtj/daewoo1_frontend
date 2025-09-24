@@ -36,7 +36,7 @@ export default {
       </div>
     </div>
     <div id="ReservationSub">
-     <img src="../assets/ion_bed.png" id ="bedImage" > <h3>객실</h3>
+      <img src="../assets/ion_bed.png" id ="bedImage" > <h3>객실</h3>
     </div>
     <div class= "ReservationList" >
       <div class="ReservationImage">
@@ -80,7 +80,7 @@ export default {
 }
 
 #ReservationSpace-btw{
- display: flex;
+  display: flex;
   justify-content: space-between;
 }
 #ReservationMain{

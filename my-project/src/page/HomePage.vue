@@ -2,23 +2,25 @@
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
 import { aTeamApi } from '@/util/axios';
+import CityItems from "@/common/components/CityItems.vue";
 
 export default {
   components: {
     HeaderComponent: HeaderComponent,
     FooterComponent: FooterComponent,
+    CityItems,
   },
   name: 'HomePage',
   data() {
     return {
-      list: [],
-      resultData: null,
+      cities: []
     }
   },
   async mounted() {
     const result = await aTeamApi.get('/api/travel-packages/popular');
-    this.resultData = result;
-    this.list = this.resultData.data.data;
+    const resultData = result.data.data.data;
+    console.log('data >>> ', resultData);
+    this.cities = resultData || [];
   }
 }
 
@@ -31,7 +33,7 @@ export default {
 
   <!--메인 사진-->
   <div class="main-photo">
-    <img src="@/assets/homepage-mainhotel-1.png" alt="메인호텔사진">
+    <img src="../assets/homepage-mainhotel-1.png" alt="메인호텔사진">
   </div>
 
 <!--메인화면 부분-->
@@ -49,7 +51,7 @@ export default {
               &nbsp;Enter Destination&nbsp;
             </legend>
             <div class="search-bar-box">
-              <img src="@/assets/ion_bed.png" alt="침대 아이콘">&nbsp;도시와 호텔을 선택하세요
+              <img src="../assets/ion_bed.png" alt="침대 아이콘">&nbsp;도시와 호텔을 선택하세요
             </div>
           </fieldset>
         </form>
@@ -60,7 +62,7 @@ export default {
             </legend>
             <div class="search-bar-box">
               <button id="checkin" onclick="showCalendar()">
-                날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="@/assets/calendar.png" alt="달력 아이콘">
+                날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="../assets/calendar.png" alt="달력 아이콘">
               </button>
             </div>
           </fieldset>
@@ -72,7 +74,7 @@ export default {
             </legend>
             <div class="search-bar-box">
               <button id="checkout" onclick="showCalendar()">
-                날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="@/assets/calendar.png" alt="달력 아이콘">
+                날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="../assets/calendar.png" alt="달력 아이콘">
               </button>
             </div>
           </fieldset>
@@ -83,7 +85,7 @@ export default {
               &nbsp;Room & Guests&nbsp;
             </legend>
             <div class="search-bar-box">
-              <img src="@/assets/ion_user.png" alt="유저 아이콘">&nbsp;방 개수, 인원 수를 선택하세요
+              <img src="../assets/ion_user.png" alt="유저 아이콘">&nbsp;방 개수, 인원 수를 선택하세요
             </div>
           </fieldset>
         </form>
@@ -106,109 +108,8 @@ export default {
     </div>
   </div>
 
-  <!--도시 대표 이미지-->
   <div class="city-selection-imgs">
-    <!-- 첫번째 도시-->
-    <div class="first-city">
-      <img src="@/assets/melbourne.png">
-
-      <div class="city-item">
-        <div class="city-content">
-          <h3 v-for="item in list" :key="item" class="city-title">
-            {{ item.cityName }}
-          </h3>
-          <span class="city-detail"> <!--한줄(두줄)에는 공백포함 18자(40자)만 허용하기-->
-            Amazing journey
-          </span>
-        </div>
-        <div class="homepage-hotel-price">
-          <h3>
-            130,000원
-          </h3>
-        </div>
-        <div class="hotel-book-btn">
-          <button id="bookhotel">Book a Hotel</button>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!--두번째 도시-->
-    <div class="second-city">
-      <img src="@/assets/paris.png">
-
-      <div class="city-item">
-        <div class="city-content">
-          <h3 class="city-title">
-            파리
-          </h3>
-          <span class="city-detail">
-            A Paris Adventure
-          </span>
-        </div>
-        <div class="homepage-hotel-price">
-          <h3>
-            140,000원
-          </h3>
-        </div>
-        <div class="hotel-book-btn">
-          <button id="bookhotel">Book a Hotel</button>
-        </div>
-      </div>
-
-    </div>
-
-    <!--세번째 도시-->
-    <div class="third-city">
-      <img src="@/assets/london.png">
-
-      <div class="city-item">
-        <div class="city-content">
-          <h3 class="city-title">
-            런던
-          </h3>
-          <span class="city-detail">
-            London eye adventurewwwwwwwwwwwwwwwwwwwwwwwwwwwww
-          </span>
-        </div>
-        <div class="homepage-hotel-price">
-          <h3>
-            150,000원
-          </h3>
-        </div>
-        <div class="hotel-book-btn">
-          <button id="bookhotel">Book a Hotel</button>
-        </div>
-      </div>
-
-    </div>
-
-    <!--네번째 도시-->
-    <div class="fourth-city">
-      <img src="@/assets/colombia.png">
-
-      <div class="city-item">
-        <div class="city-content">
-          <h3 class="city-title">
-            콜롬비아
-          </h3>
-          <span class="city-detail">
-            Amazing streets
-          </span>
-        </div>
-        <div class="homepage-hotel-price">
-          <h3>
-            130,000원
-          </h3>
-        </div>
-        <div class="hotel-book-btn">
-          <button id="bookhotel">Book a Hotel</button>
-        </div>
-      </div>
-
-    </div>
-
+    <CityItems v-for="city in cities" :key="city.id" :cityInfo="city"/>
   </div>
 
 
@@ -251,10 +152,10 @@ export default {
       </div>
     </div>
     <div class="tour-imgs">
-      <img src="@/assets/melaka-tour1.png">
-      <img src="@/assets/melaka-tour2.png">
-      <img src="@/assets/melaka-tour3.png">
-      <img src="@/assets/melaka-tour4.png">
+      <img src="../assets/melaka-tour1.png">
+      <img src="../assets/melaka-tour2.png">
+      <img src="../assets/melaka-tour3.png">
+      <img src="../assets/melaka-tour4.png">
     </div>
   </div>
 
