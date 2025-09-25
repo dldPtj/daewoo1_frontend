@@ -14,6 +14,8 @@
   <button @click="$router.push('/ProfileComponent')">ProfileComponent 이동</button>
   <button @click="$router.push('/reservation')">Reservation 이동</button>
   <button @click="$router.push('/reservationComponent')">reservationComponent 이동</button>
+  <button @click="$router.push('/paymentadd')">paymentadd 이동</button>
+
 </template>
 
 <style>

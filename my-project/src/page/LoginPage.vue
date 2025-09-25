@@ -3,6 +3,7 @@ import eyeoff from '../assets/Eye off.png'
 import eyeon from '../assets/Eye.png'
 import LoginImg1 from '../assets/LoginImg1.jpg'
 import LoginImg2 from '../assets/LoginImg2.jpg'
+import axios from "@/common/commonAxios";
   export default {
     data() {
       return {
@@ -12,12 +13,18 @@ import LoginImg2 from '../assets/LoginImg2.jpg'
         LoginImgBtn2: LoginImg2,
         ChangeLBtn1: true,
         ChangeLBtn2: false,
-        TimerId : null
+        TimerId : null,
+        LoginItem: {},
       };
     },
-    mounted() {
+    async mounted() {
       this.TimerId = setInterval(this.TtoCIMG, 10000);
+      const res = await axios.post('api/auth/signup');
+      const data = res.data;
+      console.log('data >>> ', data);
+      this.hotels = data || [];
     },
+
     methods: {
       changeEyeImg(){
         if(this.eyeImg === eyeoff){
@@ -68,11 +75,11 @@ import LoginImg2 from '../assets/LoginImg2.jpg'
       </div>
       <fieldset class="fieldLogin">
           <legend class="LegendLogin">이메일</legend>
-          <input type="email" placeholder="이메일을 입력하세요." class="LTextBox">
+          <input type="email" placeholder="이메일을 입력하세요." value="" class="LTextBox">
         </fieldset>
       <fieldset class="fieldLogin">
         <legend class="LegendLogin">Password</legend>
-        <input type="password" placeholder="비밀번호를 입력하세요." class="LTextBox">
+        <input type="password" placeholder="비밀번호를 입력하세요." value="" class="LTextBox">
         <div id = "eye-offBox">
           <img :src="eyeImg" @click = "changeEyeImg" id ="eye-off" alt="눈 감는 사진">
         </div>
@@ -83,7 +90,7 @@ import LoginImg2 from '../assets/LoginImg2.jpg'
         </span>
         <router-link to="/" class = "FPwd">Forgot Password</router-link>
       </div>
-        <button type="button" id="LoginBtn">Login</button>
+        <button type="submit" id="LoginBtn">Login</button>
       <div id = "SignUpLink">
         <router-link to="/" class="SignUpBtn">회원가입</router-link>
       </div>

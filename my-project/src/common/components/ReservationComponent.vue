@@ -1,5 +1,12 @@
 <script >
-
+export default {
+  props: {
+    hotelInfo: {
+      type: Object,
+      default: () => ({}),
+    },
+  },
+};
 </script>
 
 <template>

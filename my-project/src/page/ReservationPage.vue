@@ -40,7 +40,7 @@ export default {
     <div id="ReservationSub">
       <img src="../assets/ion_bed.png" id ="bedImage" > <h3>객실</h3>
     </div>
-    <ReservationComponent/>
+    <ReservationComponent />
   </div>
 
 
