@@ -17,7 +17,7 @@ export default {
     }
   },
   async mounted(){
-    const result = await aTeamApi.get('/api/hotels/filter');
+    const result = await aTeamApi.get('/api/hotels/filter?id=1');
     this.resultData=result;
     this.list = this.resultData.data.data;
   }

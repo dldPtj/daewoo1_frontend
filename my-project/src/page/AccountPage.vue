@@ -41,9 +41,9 @@ export default {
 <!--  프로필 아래 메뉴 선택 버튼 -->
   <div class="ChangeAccountMenu">
     <button type="button" class="selectAcPage">계정</button>
-    <a></a>
+    <a class="OtherLine"></a>
     <button type="button" class="NOselectAcPage">내역</button>
-    <a></a>
+    <a class="OtherLine"></a>
     <button type="button" class="NOselectAcPage">결제수단</button>
   </div>
 <!--메뉴 선택시 나오는 화면 -->
@@ -293,7 +293,7 @@ export default {
   height: 80px;
   justify-content: center;
 }
-.ChangeAccountMenu a{
+.OtherLine{
   width: 48px;
   height: 0;
   transform: rotate(-90deg);
