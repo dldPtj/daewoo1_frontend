@@ -2,13 +2,13 @@
 import HeaderComponent from "@/common/components/HeaderComponent.vue";
 import FooterComponent from "@/common/components/FooterComponent.vue";
 import { aTeamApi } from '@/util/axios';
-import CityItems from "@/common/components/CityItems.vue";
+import CityLists from "@/common/components/CityLists.vue";
 
 export default {
   components: {
     HeaderComponent: HeaderComponent,
     FooterComponent: FooterComponent,
-    CityItems,
+    CityLists: CityLists,
   },
   name: 'HomePage',
   data() {
@@ -109,7 +109,7 @@ export default {
   </div>
 
   <div class="city-selection-imgs">
-    <CityItems v-for="city in cities" :key="city.id" :cityInfo="city"/>
+    <CityLists v-for="city in cities" :key="city.id" :cityInfo="city"/>
   </div>
 
 

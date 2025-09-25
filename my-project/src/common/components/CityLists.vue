@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "CityItems",
+  name: "CityLists",
   props: {
     cityInfo: {
       type: Object,
@@ -55,8 +55,10 @@ export default {
   overflow: hidden;
 }
 .city-img-size {
-  width: 150%;
-  height: 150%;
+  display: flex;
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
 }
 .city-item {
   display: flex;
@@ -99,5 +101,10 @@ export default {
   align-items: center;
   justify-content: center;
   top: 70px;
+}
+#bookhotel:hover {
+  border-radius: 5px;
+  border: #8ae6b2 solid 3px;
+  background-color: white;
 }
 </style>
