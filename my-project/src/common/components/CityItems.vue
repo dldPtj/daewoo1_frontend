@@ -1,28 +1,39 @@
 <script>
-  export default {
-    name: "CityItems",
-    props: {
-      cityInfo: {
-        type: Object,
-        default: () => ({}),
-      },
+export default {
+  name: "CityItems",
+  props: {
+    cityInfo: {
+      type: Object,
+      default: () => ({}),
     },
-  };
+  },
+  computed: {
+    fullImageUrl() {
+      // API 서버 주소 + imageUrl 결합
+      return this.cityInfo.imageUrl
+          ? `http://localhost:18888${this.cityInfo.imageUrl}`
+          : "";
+    },
+  },
+};
 </script>
 
 <template>
   <!-- 첫번째 도시-->
   <div class="first-city">
-    <img src="./melbourne.png">
+    <div class="city-img-container">
+      <img :src="fullImageUrl" alt="city image" class="city-img-size">
+    </div>
 
     <div class="city-item">
       <div class="city-content">
         <h3 class="city-title">
           {{ cityInfo.cityName }}
         </h3>
-        <span class="city-detail"> <!--한줄(두줄)에는 공백포함 18자(40자)만 허용하기-->
-            {{ cityInfo.title }}
-          </span>
+        <span class="city-detail">
+          <!--한줄(두줄)에는 공백포함 18자(40자)만 허용하기-->
+          {{ cityInfo.title }}
+        </span>
       </div>
       <div class="homepage-hotel-price">
         <h3>
@@ -33,11 +44,20 @@
         <button id="bookhotel">Book a Hotel</button>
       </div>
     </div>
-
   </div>
 </template>
 
 <style>
+.city-img-container {
+  border-radius: 15px;
+  width: 300px;
+  height: 420px;
+  overflow: hidden;
+}
+.city-img-size {
+  width: 150%;
+  height: 150%;
+}
 .city-item {
   display: flex;
   align-items: center;
@@ -56,7 +76,7 @@
   color: white;
 }
 .city-detail {
-  max-width: 165px;
+  max-width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
