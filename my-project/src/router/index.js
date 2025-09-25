@@ -19,6 +19,8 @@ import LoginPage from '../page/LoginPage.vue';
 // import Findpw from '../components/Findpw.vue';
 // import Identification from '../components/Identification.vue';
 // import Resetpw from '../components/Resetpw.vue';
+import ReservationComponent from '../common/components/ReservationComponent.vue'
+
 
 const router = createRouter({
     history: createWebHistory(),
@@ -42,6 +44,8 @@ const router = createRouter({
         // { path: '/findpw', name: 'findpw', component: Findpw },
         // { path: '/identification', name: 'identification', component: Identification },
         // { path: '/resetpw', name: 'resetpw', component: Resetpw },
+        { path: '/reservationComponent', name: 'reservationComponent', component: ReservationComponent },
+
     ],
 });
 

@@ -17,7 +17,7 @@ export default {
       ReadOnlyPhonNum: true,
       ReadOnlyAddress: true,
       ReadOnlyBirth: true,
-      AccountData: '',
+      AccountData: {},
     };
   },
   methods:{
