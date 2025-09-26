@@ -50,9 +50,9 @@ export default {
             <legend>
               &nbsp;Enter Destination&nbsp;
             </legend>
-            <div class="search-bar-box">
-              <img src="../assets/ion_bed.png" alt="침대 아이콘">&nbsp;도시와 호텔을 선택하세요
-            </div>
+            <button class="search-bar-box">
+              <img src="../assets/ion_bed.png" class="ion_bed" alt="침대 아이콘">&nbsp;도시와 호텔을 선택하세요
+            </button>
           </fieldset>
         </form>
         <form class="check-in">
@@ -60,11 +60,9 @@ export default {
             <legend>
               &nbsp;Check In&nbsp;
             </legend>
-            <div class="search-bar-box">
-              <button id="checkin" onclick="showCalendar()">
-                날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="../assets/calendar.png" alt="달력 아이콘">
-              </button>
-            </div>
+            <button class="search-bar-box">
+              날짜를 선택하세요&nbsp;&nbsp;<img class="ion_calendar" src="../assets/calendar.png" alt="달력 아이콘">
+            </button>
           </fieldset>
         </form>
         <form class="check-out">
@@ -72,11 +70,9 @@ export default {
             <legend>
               &nbsp;Check Out&nbsp;
             </legend>
-            <div class="search-bar-box">
-              <button id="checkout" onclick="showCalendar()">
-                날짜를 선택하세요&nbsp;&nbsp;<img class="calendar-icon" src="../assets/calendar.png" alt="달력 아이콘">
-              </button>
-            </div>
+            <button class="search-bar-box">
+              날짜를 선택하세요&nbsp;&nbsp;<img class="ion_calendar" src="../assets/calendar.png" alt="달력 아이콘">
+            </button>
           </fieldset>
         </form>
         <form class="roomguests">
@@ -84,9 +80,9 @@ export default {
             <legend>
               &nbsp;Room & Guests&nbsp;
             </legend>
-            <div class="search-bar-box">
-              <img src="../assets/ion_user.png" alt="유저 아이콘">&nbsp;방 개수, 인원 수를 선택하세요
-            </div>
+            <button class="search-bar-box">
+              <img src="../assets/ion_user.png" class="ion_user" alt="유저 아이콘">&nbsp;방 개수, 인원 수를 선택하세요
+            </button>
           </fieldset>
         </form>
     </div>
@@ -173,7 +169,21 @@ export default {
   justify-content: space-around;
   margin-top: 50px;
 }
-
+.ion_bed {
+  width:24px;
+  height: 24px;
+  margin: auto 5px;
+}
+.ion_calendar {
+  width: 27px;
+  height: 27px;
+  margin: auto 5px;
+}
+.ion_user {
+  width: 30px;
+  height: 30px;
+  margin: auto 5px;
+}
 .search-bar {
   display: flex;
   text-align: left;
@@ -256,7 +266,9 @@ export default {
 .search-bar-box {
   display: flex;
   align-items: center;
-  margin: auto 20px auto 20px;
+  margin: auto 20px;
+  border: white solid 1px;
+  background-color: white;
 }
 .city-see-all-btn {
   border: #8ae6b2 solid 1px;
