@@ -44,6 +44,7 @@ export default {
         <button id="bookhotel">Book a Hotel</button>
       </div>
     </div>
+
   </div>
 </template>
 
