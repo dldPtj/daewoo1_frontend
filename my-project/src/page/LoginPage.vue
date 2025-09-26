@@ -3,8 +3,10 @@ import eyeoff from '../assets/Eye off.png'
 import eyeon from '../assets/Eye.png'
 import LoginImg1 from '../assets/LoginImg1.jpg'
 import LoginImg2 from '../assets/LoginImg2.jpg'
-import axios from "@/common/commonAxios";
-  export default {
+import { reactive } from "vue";
+import {aTeamApi} from "@/util/axios";
+import router from "@/router";
+export default {
     data() {
       return {
         eyeImg : eyeoff,
@@ -14,15 +16,61 @@ import axios from "@/common/commonAxios";
         ChangeLBtn1: true,
         ChangeLBtn2: false,
         TimerId : null,
-        LoginItem: {},
       };
     },
     async mounted() {
       this.TimerId = setInterval(this.TtoCIMG, 10000);
-      const res = await axios.post('api/auth/signup');
-      const data = res.data;
-      console.log('data >>> ', data);
-      this.hotels = data || [];
+
+
+    },
+    setup(){
+      const state = reactive({
+        form: {
+          userEmail: "",
+          userPw: "",
+        },
+      });
+      const submit = async () => {
+        const loginObj = {
+          email: state.form.userEmail,
+          password: state.form.userPw,
+        };
+         await aTeamApi.post('/api/auth/login', loginObj).then(async (res) => {
+           alert("로그인 성공");
+           await router.push("/homepage");
+           let token = res.data.content.accessToken;
+           localStorage.setItem("token", token);
+           let config = {
+             headers: {
+               Authorization: `Bearer ${token}`,
+             },
+           };
+
+           await aTeamApi.get('/api/users/me/profile', config).then((response) => {
+             console.log(response);
+             let userinfo = {
+               userName: response.data.content.userName,
+               email: response.data.content.email,
+             };
+             console.log(userinfo);
+           })
+               .catch((error) => {
+                 if (error.response?.status === 401) {
+                   alert("토큰이 유효하지 않습니다. 다시 로그인 해주세요.");
+                 } else  {
+                   alert("정보를 가져오는데 실패했습니다.");
+                 }
+               });
+
+         }).catch((error)=> {
+           if (error.response?.status === 500) {
+             alert("아이디와 비밀번호가 일치 하지 않습니다. 다시 로그인 해주세요.");
+           } else  {
+             alert("정보를 가져오는데 실패했습니다.");
+           }
+         });
+      };
+      return { state, submit };
     },
 
     methods: {
@@ -75,11 +123,11 @@ import axios from "@/common/commonAxios";
       </div>
       <fieldset class="fieldLogin">
           <legend class="LegendLogin">이메일</legend>
-          <input type="email" placeholder="이메일을 입력하세요." value="" class="LTextBox">
+          <input type="email" placeholder="이메일을 입력하세요." value="" class="LTextBox" id="userEmail" v-model="state.form.userEmail">
         </fieldset>
       <fieldset class="fieldLogin">
         <legend class="LegendLogin">Password</legend>
-        <input type="password" placeholder="비밀번호를 입력하세요." value="" class="LTextBox">
+        <input type="password" placeholder="비밀번호를 입력하세요." value="" class="LTextBox" id="userPw" v-model="state.form.userPw">
         <div id = "eye-offBox">
           <img :src="eyeImg" @click = "changeEyeImg" id ="eye-off" alt="눈 감는 사진">
         </div>
@@ -90,7 +138,7 @@ import axios from "@/common/commonAxios";
         </span>
         <router-link to="/" class = "FPwd">Forgot Password</router-link>
       </div>
-        <button type="submit" id="LoginBtn">Login</button>
+        <button @click="submit" id="LoginBtn">Login</button>
       <div id = "SignUpLink">
         <router-link to="/" class="SignUpBtn">회원가입</router-link>
       </div>
