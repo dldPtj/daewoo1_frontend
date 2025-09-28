@@ -2,14 +2,16 @@
 import HeaderComponent from "@/common/components/HeaderComponent.vue";
 
 export default{
-  components: {HeaderComponent}
+  components: {HeaderComponent},
+  data(){
+    return{
+
+    };
+  },
 }
 
 </script>
-components: {
-  HeaderComponent: HeaderComponent,
-  FooterComponent: FooterComponent,
-},
+
 <template>
   <HeaderComponent/>
   <div id ="accountImgMain">

@@ -18,6 +18,11 @@ export default {
       ReadOnlyAddress: true,
       ReadOnlyBirth: true,
       AccountData: {},
+      Name: {},
+      Email: {},
+      PhoneNumber: {},
+      Address: {},
+      Birth: {},
     };
   },
   methods:{
@@ -29,19 +34,19 @@ export default {
         this.ACModal = false;
       }
     },
-    ReadOnlyOnOff(val){
-      if(val === this.ReadOnlyName){
-        this.ReadOnlyName =! this.ReadOnlyName;
-      }else if(val === this.ReadOnlyEmail){
-        this.ReadOnlyEmail =! this.ReadOnlyEmail;
-      }else if(val === this.ReadOnlyPhonNum){
-        this.ReadOnlyPhonNum =! this.ReadOnlyPhonNum;
-      }else if(val === this.ReadOnlyAddress){
-        this.ReadOnlyAddress =! this.ReadOnlyAddress;
-      }else {
-        this.ReadOnlyBirth =! this.ReadOnlyBirth;
+   async ReadOnlyOnOff(field, updateKey, updateValue) {
+      try {
+        this[field] = !this[field];
+        if (this[field] === true) {
+          await aTeamApi.put("/api/users/me/profile-info", {
+            [updateKey]: this[updateValue]
+          })
+              .then(() => alert(`${updateKey} 수정 완료!`))
+        }
+      }catch (err){
+        console.error(err);
       }
-    },
+    }
   },
   watch: {
     ACModal: function(val) {
@@ -58,10 +63,14 @@ export default {
       const data = res.data.content;
       console.log('data >>> ', data);
       this.AccountData = data || '';
+      this.Name = data.userName;
+      this.Email = data.email;
+      this.PhoneNumber = data.phoneNumber;
+      this.Address = data.address;
+      this.Birth = data.birthDate;
     }catch (err){
       console.error(err);
     }
-
   }
 }
 </script>
@@ -88,11 +97,11 @@ export default {
           <a>Name</a>
 <!--          이름 정보가 저장되는 곳-->
           <div class="ACInsertData">
-            <input type="text" value="홍길동" :readonly="ReadOnlyName">
+            <input type="text" v-model="Name" :readonly="ReadOnlyName">
           </div>
         </div>
 <!--클릭시 readonly해제-->
-        <button type="button" @click="ReadOnlyOnOff(ReadOnlyName)" ><img src="../assets/AccountBtnImg.png">change</button>
+        <button type="button" @click="ReadOnlyOnOff('ReadOnlyName','userName','Name')" ><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
 <!--     이메일 리스트 박스-->
@@ -101,10 +110,10 @@ export default {
         <div class="ACDataBox">
           <a>Email</a>
           <div class="ACInsertData">
-            <input type="email" value="mjc@naver.com" :readonly="ReadOnlyEmail">
+            <input type="email" v-model="Email" :readonly="ReadOnlyEmail">
           </div>
         </div>
-        <button type="button" @click="ReadOnlyOnOff(ReadOnlyEmail)"><img src="../assets/AccountBtnImg.png">change</button>
+        <button type="button" @click="ReadOnlyOnOff('ReadOnlyEmail','data.content.email','Email')"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
 <!--     비밀번호 리스트 박스-->
@@ -126,10 +135,10 @@ export default {
         <div class="ACDataBox">
           <a>Phone number</a>
           <div class="ACInsertData">
-            <input type=text value="010-1234-1234" :readonly="ReadOnlyBirth">
+            <input type=text v-model="PhoneNumber" :readonly="ReadOnlyBirth">
           </div>
         </div>
-        <button type="button" @click="ReadOnlyOnOff(ReadOnlyBirth)"><img src="../assets/AccountBtnImg.png">change</button>
+        <button type="button" @click="ReadOnlyOnOff('ReadOnlyBirth','data.content.phoneNumber','PhoneNumber')"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
 <!--     주소 리스트 박스-->
@@ -138,10 +147,10 @@ export default {
         <div class="ACDataBox">
           <a>Address</a>
           <div class="ACInsertData">
-            <input type="text" value="부천시 어쩌구 저쩌동" :readonly="ReadOnlyAddress">
+            <input type="text" v-model="Address" :readonly="ReadOnlyAddress">
           </div>
         </div>
-        <button type="button" @click="ReadOnlyOnOff(ReadOnlyAddress)"><img src="../assets/AccountBtnImg.png">change</button>
+        <button type="button" @click="ReadOnlyOnOff('ReadOnlyAddress','data.content.address','Address')"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
 <!--     생일 리스트 박스-->
@@ -150,10 +159,10 @@ export default {
         <div class="ACDataBox">
           <a>Date of birth</a>
           <div class="ACInsertData">
-            <input type="number" value="20020912" :readonly="ReadOnlyBirth">
+            <input type="number" v-model="Birth" :readonly="ReadOnlyBirth">
           </div>
         </div>
-        <button type="button" @click="ReadOnlyOnOff(ReadOnlyBirth)"><img src="../assets/AccountBtnImg.png">change</button>
+        <button type="button" @click="ReadOnlyOnOff('ReadOnlyBirth','data.content.birthDate','Birth')"><img src="../assets/AccountBtnImg.png">change</button>
       </div>
     </div>
    </div>
