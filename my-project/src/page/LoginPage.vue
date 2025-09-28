@@ -55,6 +55,7 @@ export default {
       changeEyeImg(){
         if(this.eyeImg === eyeoff){
           this.eyeImg = eyeon;
+
         } else {
           this.eyeImg = eyeoff;
         }

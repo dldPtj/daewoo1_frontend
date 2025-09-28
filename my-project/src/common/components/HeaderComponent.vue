@@ -1,6 +1,20 @@
 <script >
+import aTeamApi from "@/util/axios";
+
   export default {
     name : 'HeaderComponent',
+    data(){
+      return{
+        ProfileName: {},
+      };
+    },
+    async mounted() {
+      const res = await aTeamApi.get('/api/users/me/profileAll');
+      const data = res.data;
+      console.log('data >>> ', data);
+      this.hotels = data || [];
+      this.ProfileName = data.content.userName;
+    }
   }
 </script>
 
@@ -30,7 +44,7 @@
             </div>
           </div>
           <span>
-                        Tomhoon
+                        {{ ProfileName }}
                     </span>
         </div>
 

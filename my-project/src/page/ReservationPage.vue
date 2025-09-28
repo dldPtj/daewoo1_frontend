@@ -2,13 +2,40 @@
 import HeaderComponent from "@/common/components/HeaderComponent.vue";
 import FooterComponent from "@/common/components/FooterComponent.vue";
 import ProfileComponent from "@/common/components/ProfileComponent.vue";
-import ReservationComponent from "@/common/components/ReservationComponent.vue"
+import ReservationComponent from "@/common/components/ReservationComponent.vue";
+import aTeamApi from "@/util/axios";
 export default {
   components: {
     HeaderComponent: HeaderComponent,
     FooterComponent: FooterComponent,
     ProfileComponent: ProfileComponent,
     ReservationComponent: ReservationComponent,
+  },
+  data() {
+    return {
+      // hotelName: {},
+      // roomNumber: {},
+      // checkinDate: {},
+      // checkoutDate: {},
+      // HotelCheckinTime: {},
+      // HotelCheckoutTime: {},
+      // HotelImageUrl: {},
+      reservations:[],
+    }
+  },
+  async mounted() {
+    const res = await aTeamApi.get('/api/users/me/reservations');
+    const data = res.data.content;
+    console.log('data >>> ', data);
+    this.reservations = data;
+    // this.hotelName = data.content.hotelName;
+    // this.roomNumber = data.content.roomNumber;
+    // this.checkinDate = data.content.checkinDate;
+    // this.checkoutDate = data.content.checkoutDate;
+    // this.HotelCheckinTime = data.content.HotelCheckinTime;
+    // this.HotelCheckoutTime = data.content.HotelCheckoutTime;
+    // this.HotelImageUrl = data.content.HotelImageUrl;
+
   }
 }
 </script>
@@ -40,7 +67,15 @@ export default {
     <div id="ReservationSub">
       <img src="../assets/ion_bed.png" id ="bedImage" > <h3>객실</h3>
     </div>
-    <ReservationComponent />
+    <ReservationComponent  v-for="(item, index) in reservations"
+                           :key = "index"
+                           :hotel-name="item.hotelName"
+                           :room-number="item.roomNumber"
+                           :checkin-date="item.checkinDate"
+                           :checkout-date="item.checkoutDate"
+                           :hotel-checkin-time="item.hotelCheckinTime"
+                           :hotel-checkout-time="item.hotelCheckoutTime"
+    />
   </div>
 
 

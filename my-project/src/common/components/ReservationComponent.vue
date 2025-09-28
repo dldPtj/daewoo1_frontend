@@ -1,11 +1,14 @@
 <script >
+
 export default {
   props: {
-    hotelInfo: {
-      type: Object,
-      default: () => ({}),
-    },
-  },
+    hotelName: String,
+    roomNumber: String,
+    checkinDate: String,
+    checkoutDate: String,
+    hotelCheckinTime: String,
+    hotelCheckoutTime: String,
+  }
 };
 </script>
 
@@ -16,12 +19,12 @@ export default {
     </div>
     <div class="Reservation_CheckInOut_Day">
       <a>Check-In</a><br>
-      <span>Thur, Dec 8</span>
+      <span>{{checkinDate}}</span>
     </div>
     <div id="StickBar">—</div>
     <div class ="Reservation_CheckInOut_Day">
       <a>Check-Out</a><br>
-      <span>Thur, Dec 8</span>
+      <span>{{checkoutDate}}</span>
     </div>
     <div class="OutLineStyle">
       <a class="OtherLine"></a>
@@ -34,9 +37,9 @@ export default {
     </div>
     <div class="check_Time_Text">
       <p>체크인</p>
-      <a>12:00pm</a>
+      <a>{{hotelCheckinTime}}</a>
       <p>체크아웃</p>
-      <a>12:00pm</a>
+      <a>{{hotelCheckoutTime}}</a>
     </div>
 
     <div class="Room_num_img">
@@ -44,7 +47,7 @@ export default {
     </div>
     <div class="Room_num_Text">
       <p>방번호</p>
-      <a>On arrival</a>
+      <a>{{roomNumber}}</a>
     </div>
     <button type="button" id="TicketBtn">
       Download Ticket
