@@ -2,7 +2,7 @@
 import HeaderComponent from "@/common/components/HeaderComponent.vue";
 import FooterComponent from "@/common/components/FooterComponent.vue";
 import ProfileComponent from "@/common/components/ProfileComponent.vue";
-import axios from "@/common/commonAxios";
+import {aTeamApi} from "@/util/axios";
 export default {
   components: {
     HeaderComponent: HeaderComponent,
@@ -53,10 +53,15 @@ export default {
     }
   },
   async mounted() {
-    const res = await axios.get('hotels/list');
-    const data = res.data.data;
-    console.log('data >>> ', data);
-    this.AccountData = data || '';
+    try {
+      const res =  await aTeamApi.get('/api/users/me/profile');
+      const data = res.data.content;
+      console.log('data >>> ', data);
+      this.AccountData = data || '';
+    }catch (err){
+      console.error(err);
+    }
+
   }
 }
 </script>

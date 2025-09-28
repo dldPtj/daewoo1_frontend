@@ -40,28 +40,6 @@ export default {
            await router.push("/homepage");
            let token = res.data.content.accessToken;
            localStorage.setItem("token", token);
-           let config = {
-             headers: {
-               Authorization: `Bearer ${token}`,
-             },
-           };
-
-           await aTeamApi.get('/api/users/me/profile', config).then((response) => {
-             console.log(response);
-             let userinfo = {
-               userName: response.data.content.userName,
-               email: response.data.content.email,
-             };
-             console.log(userinfo);
-           })
-               .catch((error) => {
-                 if (error.response?.status === 401) {
-                   alert("토큰이 유효하지 않습니다. 다시 로그인 해주세요.");
-                 } else  {
-                   alert("정보를 가져오는데 실패했습니다.");
-                 }
-               });
-
          }).catch((error)=> {
            if (error.response?.status === 500) {
              alert("아이디와 비밀번호가 일치 하지 않습니다. 다시 로그인 해주세요.");
