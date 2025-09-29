@@ -22,7 +22,7 @@ import aTeamApi from "@/util/axios";
   <div class="container">
     <nav class="nav-container">
       <!-- 왼쪽 -->
-      <div class="item">
+      <div class="item" @click="$router.push('/homepage')">
                 <span>
                     <img src="../../assets/ion_bed.png" alt="침대 사진">
                     hotels
@@ -38,7 +38,7 @@ import aTeamApi from "@/util/axios";
                     </span>
           |
           <!-- 오른쪽 두번째 -->
-          <div class="circle ">
+          <div class="circle " @click="$router.push('/account')">
             <div class="mini-circle">
               <div class="check"></div>
             </div>

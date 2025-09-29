@@ -15,11 +15,11 @@ export default {
   <header-component/>
   <ProfileComponent/>
   <div class="ChangeAccountMenu">
-    <button type="button" class="NOselectAcPage">계정</button>
+    <button type="button" class="NOselectAcPage"  @click="$router.push('/account')">계정</button>
     <a class="OtherLine"></a>
-    <button type="button" class="NOselectAcPage">내역</button>
+    <button type="button" class="NOselectAcPage" @click="$router.push('/reservation')">내역</button>
     <a class="OtherLine"></a>
-    <button type="button" class="selectAcPage">결제수단</button>
+    <button type="button" class="selectAcPage" @click="$router.push('/paymentadd')">결제수단</button>
   </div>
   <div id = "PaymentPageMain">
     <h1>결제 수단</h1>

@@ -45,11 +45,11 @@ export default {
   <profile-component/>
   <!--  프로필 아래 메뉴 선택 버튼 -->
   <div class="ChangeAccountMenu">
-    <button type="button" class="NOselectAcPage">계정</button>
+    <button type="button" class="NOselectAcPage" @click="$router.push('/account')">계정</button>
     <a class="OtherLine"></a>
-    <button type="button" class="selectAcPage">내역</button>
+    <button type="button" class="selectAcPage" @click="$router.push('/reservation')">내역</button>
     <a class="OtherLine"></a>
-    <button type="button" class="NOselectAcPage">결제수단</button>
+    <button type="button" class="NOselectAcPage" @click="$router.push('/paymentadd')">결제수단</button>
   </div>
 
   <div id="ReservationMain">
